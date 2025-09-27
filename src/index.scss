@@ -1,0 +1,95 @@
+@use '../src/assets/styles/fonts';
+
+
+$background-main-color: #0E141B;
+$background-highlight-color: #1E2329;
+$text-dim: #76808C;
+$text-main: #F3F3F3;
+$color-primary: #66C0F4;
+
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a,
+button {
+  transition: all .2s ease;
+   font-family: "Motiva Sans";
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  vertical-align: top;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container {
+  width: min(90%, 1200px);
+  margin: 0 auto;
+}
+
+body {
+  font-size: 1rem;
+  color: $text-main;
+  font-family: "Motiva Sans", sans-serif;
+
+
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100dvh;
+
+  main {
+    flex-grow: 1;
+    min-height: 600px;
+    background: radial-gradient(76.88% 68.46% at 50% 0%, #212B45 2.61%, #111822 72.64%, #0F151E 87.22%, #0E141B 100%);
+    padding-bottom: 150px;
+  }
+}
+
+
+
+.main-menu {
+  height: 100%;
+}
+
+.main-menu ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  height: 100%;
+}
+
+.btn {
+  font-family: "Motiva Sans";
+  font-size: 16px;
+  background-color: $background-highlight-color;
+  padding: 17px 25px;
+  border: none;
+  border-radius: 3px;
+  color: $text-main;
+
+  &:hover {
+   background-color: #1e2329a3
+  }
+
+}

@@ -1,0 +1,422 @@
+@use 'fonts';
+@use 'hamburgers';
+
+$background-main-color: #0E141B;
+$background-highlight-color: #1E2329;
+$text-dim: #76808C;
+$text-main: #F3F3F3;
+$color-primary: #66C0F4;
+
+svg {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+.svg-container {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow-left {
+    transform: rotate(180deg);
+}
+
+.arrow-down {
+    transform: rotate(90deg);
+}
+
+header {
+    padding: 18px 22px;
+    width: 100%;
+    background-color: $background-main-color;
+    font-family: "Motiva Sans";
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    justify-content: space-between;
+}
+
+.history-navigation-btns {
+    display: flex;
+    gap: 5px;
+
+    button:hover svg * {
+        fill: $text-main;
+    }
+
+}
+
+.history-navigation-btns .svg-container {
+    width: 24px;
+    height: 24px;
+    padding: 3px;
+
+    svg * {
+        fill: $text-dim;
+    }
+}
+
+
+.logo-container {
+    margin-left: 18px;
+}
+
+.header-navigation {
+    margin-left: 68px;
+    display: flex;
+    align-items: center;
+
+    ul {
+        display: flex;
+        gap: 68px;
+        align-items: center;
+    }
+
+    a {
+        color: $text-main;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    a.active, a:hover {
+        color: $color-primary;
+    }
+
+    
+}
+
+
+.header-rigth {
+    display: flex;
+    gap: 57px;
+    align-items: center;
+}
+
+.profile-container {
+    display: flex;
+    gap: 10px;
+
+    &>div {
+        background-color: $background-highlight-color;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 3px;
+
+    }
+
+    .svg-container {
+        width: 25px;
+        height: 25px;
+    }
+
+
+    svg * {
+        fill: $text-dim;
+    }
+}
+
+.header-btn {
+    width: 100%;
+    height: 100%;
+    padding: 6px 16px;
+
+    &:hover {
+        background-color: #3d4450;
+    }
+}
+
+.profile-info {
+    padding: 4px 3px;
+    gap: 8px;
+
+    .svg-container {
+        padding: 7px 5px;
+    }
+
+    svg * {
+        fill: $text-main;
+    }
+
+}
+
+.profile-name button {
+    font-size: 14px;
+    color: $text-main;
+
+    &:hover {
+        color: $text-dim;
+    }
+}
+
+.profile-money {
+    font-size: 14px;
+
+
+    a {
+        color: $text-dim;
+        text-decoration: none;
+    }
+
+    &:hover a {
+        color: $text-main;
+    }
+}
+
+.action-menu {
+    display: inline-flex;
+    gap: 18px;
+    align-items: center;
+
+    .help-link a,
+    .view-select button {
+        font-size: 16px;
+        color: $text-dim;
+        text-decoration: none;
+    }
+
+    .help-link:hover a {
+        color: $text-main;
+    }
+
+    .view-select {
+
+        button {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .svg-container {
+            padding: 7px 5px;
+        }
+
+        &:hover {
+            button {
+                color: $text-main;
+            }
+
+            svg * {
+                fill: $text-main;
+                transition: all .2s ease;
+            }
+        }
+    }
+
+
+
+    svg * {
+        fill: $text-dim;
+    }
+
+    .action-btns {
+        .svg-container {
+            padding: 5px 3px;
+        }
+
+        &:hover {
+            svg * {
+                fill: $text-main;
+                transition: all .2s ease;
+            }
+        }
+
+    }
+}
+
+
+.mobile-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 280px;
+    height: 100dvh;
+    background-color: $background-highlight-color;
+    transform: translateX(-100%);
+    transition: all .4s ease-in-out;
+    z-index: 50;
+}
+
+
+.mobile-menu-panel {
+    position: absolute;
+    inset: 0;
+    overflow-y: auto;
+
+    a {
+        color: $text-dim;
+        text-decoration: none;
+
+        &:hover {
+            color: $text-main;
+        }
+    }
+}
+
+.mobile-menu-content {
+    min-height: 100%;
+    font-size: 30px;
+    background-color: $background-highlight-color;
+}
+
+
+.mobile-menu-user-area {
+    padding: 24px 20px 12px 20px;
+    font-size: 22px;
+    box-shadow: inset 0 -4px 5px 0 #000000;
+}
+
+.player-avatar {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+
+.mobile-menu-user {
+    line-height: 36px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mobile-menu-wallet a {
+    color: $text-dim;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.menu-item {
+    line-height: 3.5rem;
+    border-bottom: 1px solid $background-main-color;
+    border-top: 1px solid $background-main-color;
+    position: relative;
+    font-size: 22px;
+    height: 56px;
+
+    a {
+        position: absolute;
+        inset: 0;
+        padding: 1px 10px;
+    }
+
+}
+
+
+.mobile-menu-footer-logo {
+    height: 30px;
+    width: 100px;
+    margin-bottom: 15px;
+
+    img {
+        object-fit: contain;
+    }
+}
+
+.mobile-menu-footer {
+    padding: 100px 10px 30px;
+    font-size: 10px;
+    color: $text-dim;
+}
+
+.open-menu {
+    transform: translateX(0);
+}
+
+.responsive-header {
+    display: none;
+    background-color: #171a21;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 8px;
+    text-align: center;
+    z-index: 100;
+}
+
+.responsive-header.is-active {
+    display: block;
+}
+
+
+
+.responsive-menu-hamburger {
+    height: 31px;
+    width: 36px;
+}
+
+.responsive-header-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.responsive-header-logo {
+    flex: 1;
+
+    svg {
+        width: auto;
+    }
+}
+
+@media screen and (max-width:1700px) {
+    .header-navigation ul {
+        gap: 28px;
+    }
+}
+
+@media screen and (max-width:1500px) {
+
+
+    header {
+        padding: unset;
+        padding-top: 60px;
+    }
+
+    .logo-container {
+        margin-left: 0;
+    }
+
+
+    .header-left,
+    .header-rigth {
+        display: none;
+    }
+
+    .responsive-header {
+        display: block;
+    }
+}
+
+.overlay {
+    inset: 0;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: 49;
+
+    &.is-active {
+        visibility: visible;
+        opacity: 1;
+    }
+}
