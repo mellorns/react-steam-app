@@ -34,62 +34,62 @@ export default function ProfileMainContent() {
                         <ul className="profile-games-items-list">
                             <li>
                                 <a href="#" className="game-link">
-                                    <img src="src/assets/images/game_1.png" alt="" />
+                                    <img src="/images/game_1.png" alt="" />
                                 </a>
                             </li>
                             <li>
                                 <a href="#" className="game-link">
-                                    <img src="src/assets/images/game_1.png" alt="" />
+                                    <img src="/images/game_1.png" alt="" />
                                 </a>
                             </li>
                             <li>
                                 <a href="#" className="game-link">
-                                    <img src="src/assets/images/game_1.png" alt="" />
+                                    <img src="/images/game_1.png" alt="" />
                                 </a>
                             </li>
                             <li>
                                 <a href="#" className="game-link">
-                                    <img src="src/assets/images/game_1.png" alt="" />
+                                    <img src="/images/game_1.png" alt="" />
                                 </a>
                             </li>
                             <li>
                                 <a href="#" className="game-link">
-                                    <img src="src/assets/images/game_1.png" alt="" />
+                                    <img src="/images/game_1.png" alt="" />
                                 </a>
                             </li>
                             <li>
                                 <a href="#" className="game-link">
-                                    <img src="src/assets/images/game_1.png" alt="" />
+                                    <img src="/images/game_1.png" alt="" />
                                 </a>
                             </li>
                             <li>
                                 <a href="#" className="game-link">
-                                    <img src="src/assets/images/game_1.png" alt="" />
+                                    <img src="/images/game_1.png" alt="" />
                                 </a>
                             </li>
                             <li>
                                 <a href="#" className="game-link">
-                                    <img src="src/assets/images/game_1.png" alt="" />
+                                    <img src="/images/game_1.png" alt="" />
                                 </a>
                             </li>
                             <li>
                                 <a href="#" className="game-link">
-                                    <img src="src/assets/images/game_1.png" alt="" />
+                                    <img src="/images/game_1.png" alt="" />
                                 </a>
                             </li>
                             <li>
                                 <a href="#" className="game-link">
-                                    <img src="src/assets/images/game_1.png" alt="" />
+                                    <img src="/images/game_1.png" alt="" />
                                 </a>
                             </li>
                             <li>
                                 <a href="#" className="game-link">
-                                    <img src="src/assets/images/game_1.png" alt="" />
+                                    <img src="/images/game_1.png" alt="" />
                                 </a>
                             </li>
                             <li>
                                 <a href="#" className="game-link">
-                                    <img src="src/assets/images/game_1.png" alt="" />
+                                    <img src="/images/game_1.png" alt="" />
                                 </a>
                             </li>
                         </ul>
@@ -106,7 +106,7 @@ export default function ProfileMainContent() {
                     <div className="container-item">
                         <div className="comment-block">
                             <div className="comment-profile-avatar avatar-outline">
-                                <img src="src/assets/images/mini-profile.png" alt="" />
+                                <img src="/images/mini-profile.png" alt="" />
                             </div>
                             <div className="comment-form-container">
                                 <form>
