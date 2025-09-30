@@ -19,27 +19,27 @@ export default function ProfileSideBar() {
                         <ul className="sidebar-badges-list">
                             <li>
                                 <a href="#" title="badge_1">
-                                    <img src="src/assets/images/badge_1.png" alt="" />
+                                    <img src="images/badge_1.png" alt="" />
                                 </a>
                             </li>
                             <li>
                                 <a href="#" title="badge_1">
-                                    <img src="src/assets/images/badge_1.png" alt="" />
+                                    <img src="images/badge_1.png" alt="" />
                                 </a>
                             </li>
                             <li>
                                 <a href="#" title="badge_1">
-                                    <img src="src/assets/images/badge_1.png" alt="" />
+                                    <img src="images/badge_1.png" alt="" />
                                 </a>
                             </li>
                             <li>
                                 <a href="#" title="badge_1">
-                                    <img src="src/assets/images/badge_1.png" alt="" />
+                                    <img src="images/badge_1.png" alt="" />
                                 </a>
                             </li>
                             <li>
                                 <a href="#" title="badge_1">
-                                    <img src="src/assets/images/badge_1.png" alt="" />
+                                    <img src="images/badge_1.png" alt="" />
                                 </a>
                             </li>
                         </ul>
@@ -93,7 +93,7 @@ export default function ProfileSideBar() {
                     <button>
                         <div className='svg-container'>
                             <svg className='arrow-down'>
-                                <use xlinkHref="src/assets/images/sprite.svg#arrow"></use>
+                                <use xlinkHref="images/sprite.svg#arrow"></use>
                             </svg>
                         </div>
                     </button>
@@ -103,7 +103,7 @@ export default function ProfileSideBar() {
                         <a href="#" className="friend-list-link">
                             <div className="friend-content">
                                 <div className="friend-profile-avatar avatar-outline">
-                                    <img src="src/assets/images/mini-profile.png" alt="" />
+                                    <img src="images/mini-profile.png" alt="" />
                                 </div>
                                 <div className="friend-description">
                                     <div className="friend-name">
@@ -123,7 +123,7 @@ export default function ProfileSideBar() {
                         <a href="#" className="friend-list-link">
                             <div className="friend-content">
                                 <div className="friend-profile-avatar avatar-outline">
-                                    <img src="src/assets/images/mini-profile.png" alt="" />
+                                    <img src="images/mini-profile.png" alt="" />
                                 </div>
                                 <div className="friend-description">
                                     <div className="friend-name">
@@ -143,7 +143,7 @@ export default function ProfileSideBar() {
                         <a href="#" className="friend-list-link">
                             <div className="friend-content">
                                 <div className="friend-profile-avatar avatar-outline">
-                                    <img src="src/assets/images/mini-profile.png" alt="" />
+                                    <img src="images/mini-profile.png" alt="" />
                                 </div>
                                 <div className="friend-description">
                                     <div className="friend-name">
@@ -163,7 +163,7 @@ export default function ProfileSideBar() {
                         <a href="#" className="friend-list-link">
                             <div className="friend-content">
                                 <div className="friend-profile-avatar avatar-outline">
-                                    <img src="src/assets/images/mini-profile.png" alt="" />
+                                    <img src="images/mini-profile.png" alt="" />
                                 </div>
                                 <div className="friend-description">
                                     <div className="friend-name">

@@ -2,8 +2,10 @@ import './App.css'
 import { HashRouter, Route, Routes } from 'react-router'
 import DefaultLayout from './layout/DefaultLayout'
 import Profile from './pages/Profile'
-import Store from './pages/Store'
 import '../src/assets/styles/profile.scss'
+import '../src/assets/styles/store/home.scss'
+import StoreLayout from './layout/StoreLayout'
+import StoreHome from './pages/StoreHome'
 
 function App() {
 
@@ -11,7 +13,9 @@ function App() {
     <HashRouter>
       <Routes>
         <Route element={<DefaultLayout />}>
-          <Route path='/' element={<Store />} />
+          <Route element={<StoreLayout />}>
+            <Route path='/' element={<StoreHome />} />
+          </Route>
           <Route path='/profile/' element={<Profile />} />
         </Route>
       </Routes>

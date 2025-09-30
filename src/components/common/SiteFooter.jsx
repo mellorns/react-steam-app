@@ -8,12 +8,12 @@ export default function SiteFooter() {
                     <div className='footer-links'>
                         <div className="img-container">
                             <a href="#">
-                                <img src="src/assets/images/valve_footer_logo.png" alt="" />
+                                <img src="images/valve_footer_logo.png" alt="" />
                             </a>
                         </div>
                         <div className="img-container">
                             <a href="#">
-                                <img src="src/assets/images/steam_footer_logo.png" alt="" />
+                                <img src="images/steam_footer_logo.png" alt="" />
                             </a>
                         </div>
                     </div>
@@ -66,7 +66,7 @@ export default function SiteFooter() {
                             <a href="#">
                                 <div className="svg-container">
                                     <svg>
-                                        <use xlinkHref="src/assets/images/sprite.svg#facebook-icon"></use>
+                                        <use xlinkHref="images/sprite.svg#facebook-icon"></use>
                                     </svg>
                                 </div>
                             </a>
@@ -75,7 +75,7 @@ export default function SiteFooter() {
                             <a href="#">
                                 <div className="svg-container">
                                     <svg>
-                                        <use xlinkHref="src/assets/images/sprite.svg#twitter-icon"></use>
+                                        <use xlinkHref="images/sprite.svg#twitter-icon"></use>
                                     </svg>
                                 </div>
                             </a>

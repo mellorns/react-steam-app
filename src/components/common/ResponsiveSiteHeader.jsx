@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router";
+import Overlay from "./Overlay";
 
 export default function ResponsiveSiteHeader() {
 
@@ -36,7 +37,7 @@ export default function ResponsiveSiteHeader() {
                             <div className="mobile-menu-user">
                                 <div className="player-avatar">
                                     <NavLink to={`profile`}>
-                                        <img src="src/assets/images/mini-profile.png" alt="profile image" />
+                                        <img src="images/mini-profile.png" alt="profile image" />
                                     </NavLink>
                                 </div>
                                 <NavLink to={`profile`}>
@@ -85,7 +86,7 @@ export default function ResponsiveSiteHeader() {
                     </div>
                 </div>
             </div>
-            <div className={`overlay ${isActive ? "is-active" : ''}`} onClick={toogleMobileMenu}></div>
+            <Overlay handleClick={toogleMobileMenu} isActive={isActive}/>
             <div className="responsive-header">
                 <div className="responsive-header-content">
                     <button className={`hamburger hamburger--spring ${isActive ? "is-active" : ''}`} type="button" onClick={toogleMobileMenu}>

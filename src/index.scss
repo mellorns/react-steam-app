@@ -22,9 +22,21 @@ ol {
 }
 
 a,
-button {
+button,
+svg * {
   transition: all .2s ease;
-   font-family: "Motiva Sans";
+  font-family: "Motiva Sans";
+}
+
+button {
+  border: none;
+  color: $text-main;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: $text-main;
 }
 
 button {
@@ -47,8 +59,6 @@ body {
   font-size: 1rem;
   color: $text-main;
   font-family: "Motiva Sans", sans-serif;
-
-
 }
 
 .page-wrapper {
@@ -89,7 +99,23 @@ body {
   color: $text-main;
 
   &:hover {
-   background-color: #1e2329a3
+    background-color: #1e2329a3
   }
 
+}
+
+
+.overlay {
+  inset: 0;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 49;
+
+  &.is-active {
+    visibility: visible;
+    opacity: 1;
+  }
 }

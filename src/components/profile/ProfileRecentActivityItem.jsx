@@ -2,7 +2,7 @@ export default function ProfileRecentActivityItem() {
     return (
      <div className="container-item game-info">
   <div className="game-info-cap">
-    <img src="src/assets/images/game_1.png" alt="" />
+    <img src="images/game_1.png" alt="" />
   </div>
 
   <div className="game-info-details-top">
@@ -11,7 +11,7 @@ export default function ProfileRecentActivityItem() {
       <div className="game-firstTimePlay">
         <div className="svg-container">
           <svg>
-            <use xlinkHref="src/assets/images/sprite.svg#date_range"></use>
+            <use xlinkHref="images/sprite.svg#date_range"></use>
           </svg>
         </div>
         <span>3 Oct 2023</span>
@@ -19,7 +19,7 @@ export default function ProfileRecentActivityItem() {
       <div className="game-hoursPlayed">
         <div className="svg-container">
           <svg>
-            <use xlinkHref="src/assets/images/sprite.svg#timelapse"></use>
+            <use xlinkHref="images/sprite.svg#timelapse"></use>
           </svg>
         </div>
         <span>32 hours</span>
@@ -30,19 +30,19 @@ export default function ProfileRecentActivityItem() {
   <div className="game-info-achievements">
     <div className="svg-container">
       <svg>
-        <use xlinkHref="src/assets/images/sprite.svg#stars"></use>
+        <use xlinkHref="images/sprite.svg#stars"></use>
       </svg>
     </div>
     <label>35/127 </label>
     <progress value={35} max={127}></progress>
 
     <ul className="game-info-achievements-list">
-      <li><div className="img-container"><img src="src/assets/images/achv_1.png" alt="" /></div></li>
-      <li><div className="img-container"><img src="src/assets/images/achv_1.png" alt="" /></div></li>
-      <li><div className="img-container"><img src="src/assets/images/achv_1.png" alt="" /></div></li>
-      <li><div className="img-container"><img src="src/assets/images/achv_1.png" alt="" /></div></li>
-      <li><div className="img-container"><img src="src/assets/images/achv_1.png" alt="" /></div></li>
-      <li><div className="img-container"><img src="src/assets/images/achv_1.png" alt="" /></div></li>
+      <li><div className="img-container"><img src="images/achv_1.png" alt="" /></div></li>
+      <li><div className="img-container"><img src="images/achv_1.png" alt="" /></div></li>
+      <li><div className="img-container"><img src="images/achv_1.png" alt="" /></div></li>
+      <li><div className="img-container"><img src="images/achv_1.png" alt="" /></div></li>
+      <li><div className="img-container"><img src="images/achv_1.png" alt="" /></div></li>
+      <li><div className="img-container"><img src="images/achv_1.png" alt="" /></div></li>
     </ul>
   </div>
 </div>

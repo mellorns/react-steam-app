@@ -16,14 +16,14 @@ export default function SiteHeader() {
                     <button>
                         <div className='svg-container'>
                             <svg className='arrow-left'>
-                                <use xlinkHref="src/assets/images/sprite.svg#arrow"></use>
+                                <use xlinkHref="images/sprite.svg#arrow"></use>
                             </svg>
                         </div>
                     </button>
                     <button>
                         <div className='svg-container'>
                             <svg>
-                                <use xlinkHref="src/assets/images/sprite.svg#arrow"></use>
+                                <use xlinkHref="images/sprite.svg#arrow"></use>
                             </svg>
                         </div>
                     </button>
@@ -69,7 +69,7 @@ export default function SiteHeader() {
                         <button className='header-btn'>
                             <div className='svg-container'>
                                 <svg>
-                                    <use xlinkHref="src/assets/images/sprite.svg#people"></use>
+                                    <use xlinkHref="images/sprite.svg#people"></use>
                                 </svg>
                             </div>
                         </button>
@@ -78,7 +78,7 @@ export default function SiteHeader() {
                         <button className='header-btn'>
                             <div className='svg-container'>
                                 <svg>
-                                    <use xlinkHref="src/assets/images/sprite.svg#notifications"></use>
+                                    <use xlinkHref="images/sprite.svg#notifications"></use>
                                 </svg>
                             </div>
                         </button>
@@ -86,7 +86,7 @@ export default function SiteHeader() {
                     <div className='profile-info'>
                         <div className="img-container">
                             <NavLink to={`profile`}>
-                                <img src="src/assets/images/mini-profile.png" alt="profile image" />
+                                <img src="images/mini-profile.png" alt="profile image" />
                             </NavLink>
                         </div>
                         <div className='profile-name'>
@@ -102,7 +102,7 @@ export default function SiteHeader() {
                         <button>
                             <div className='svg-container'>
                                 <svg className='arrow-down'>
-                                    <use xlinkHref="src/assets/images/sprite.svg#arrow"></use>
+                                    <use xlinkHref="images/sprite.svg#arrow"></use>
                                 </svg>
                             </div>
                         </button>
@@ -118,7 +118,7 @@ export default function SiteHeader() {
                             <span> View</span>
                             <div className='svg-container'>
                                 <svg className='arrow-down'>
-                                    <use xlinkHref="src/assets/images/sprite.svg#arrow"></use>
+                                    <use xlinkHref="images/sprite.svg#arrow"></use>
                                 </svg>
                             </div>
                         </button>
@@ -126,21 +126,21 @@ export default function SiteHeader() {
                     <button className='action-btns'>
                         <div className='svg-container'>
                             <svg>
-                                <use xlinkHref="src/assets/images/sprite.svg#minimize"></use>
+                                <use xlinkHref="images/sprite.svg#minimize"></use>
                             </svg>
                         </div>
                     </button>
                     <button className='action-btns'>
                         <div className='svg-container'>
                             <svg >
-                                <use xlinkHref="src/assets/images/sprite.svg#content_copy"></use>
+                                <use xlinkHref="images/sprite.svg#content_copy"></use>
                             </svg>
                         </div>
                     </button>
                     <button className='action-btns'>
                         <div className='svg-container'>
                             <svg >
-                                <use xlinkHref="src/assets/images/sprite.svg#close"></use>
+                                <use xlinkHref="images/sprite.svg#close"></use>
                             </svg>
                         </div>
                     </button>

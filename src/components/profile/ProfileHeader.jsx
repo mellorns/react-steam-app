@@ -4,7 +4,7 @@ export default function ProfileHeader() {
             <div className="profile-header-content">
                 <div className="profile-header-avatar">
                     <div className="profile-header-avatar-frame">
-                        <img src="src/assets/images/mini-profile.png" alt="" />
+                        <img src="images/mini-profile.png" alt="" />
                     </div>
                 </div>
                 <div className="profile-header-user-info">
@@ -13,7 +13,7 @@ export default function ProfileHeader() {
                         <button>
                             <div className='svg-container'>
                                 <svg className='arrow-down'>
-                                    <use xlinkHref="src/assets/images/sprite.svg#arrow"></use>
+                                    <use xlinkHref="images/sprite.svg#arrow"></use>
                                 </svg>
                             </div>
                         </button>
@@ -40,7 +40,7 @@ export default function ProfileHeader() {
                         </div>
                         <div className="profile-header-user-lvl">
                             <div className="profile-header-years">
-                                <img src="src/assets/images/years_service.png" alt="" />
+                                <img src="images/years_service.png" alt="" />
                             </div>
                             <div className="profile-header-lvl-text">
                                 <div>Years of Service</div>

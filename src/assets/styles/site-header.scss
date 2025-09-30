@@ -94,11 +94,12 @@ header {
         font-weight: 700;
     }
 
-    a.active, a:hover {
+    a.active,
+    a:hover {
         color: $color-primary;
     }
 
-    
+
 }
 
 
@@ -403,20 +404,5 @@ header {
 
     .responsive-header {
         display: block;
-    }
-}
-
-.overlay {
-    inset: 0;
-    position: fixed;
-    background: rgba(0, 0, 0, 0.5);
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.3s ease-in-out;
-    z-index: 49;
-
-    &.is-active {
-        visibility: visible;
-        opacity: 1;
     }
 }
