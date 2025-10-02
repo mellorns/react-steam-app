@@ -1,8 +1,11 @@
 $background-tertiary: #212B45;
 $background-highligth: #1E2329;
+$background-main: #0E141B;
+$background-hover: #313843;
 $color-secondary: #4B619B;
 $text-dim: #76808C;
 $text-main: #F3F3F3;
+$accent-green: #A1CD44;
 
 
 .store-header {
@@ -18,6 +21,14 @@ $text-main: #F3F3F3;
     @media screen and (max-width: 1500px) {
         top: 58px;
     }
+}
+
+section {
+    .container {
+        width: min(90%, 1400px);
+    }
+
+    margin-bottom: 100px;
 }
 
 .store-header-navigation {
@@ -223,11 +234,8 @@ $text-main: #F3F3F3;
 
 
 .featured-section {
-    margin-bottom: 100px;
 
-    .container {
-        width: min(90%, 1400px);
-    }
+
 
     .swiper-slide-content {
         display: grid;
@@ -246,7 +254,6 @@ $text-main: #F3F3F3;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 7px;
-
 
         img:hover {
             scale: 1.05;
@@ -315,26 +322,6 @@ $text-main: #F3F3F3;
 
     }
 
-    .whish-btn {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        color: $text-main;
-        padding: 10px 20px;
-        background-color: $background-highligth;
-        border-radius: 3px;
-
-        &:hover {
-            background-color: $color-secondary;
-        }
-
-        .svg-container {
-            width: 24px;
-            height: 24px;
-            padding: 3px 2px;
-        }
-    }
-
     .product-price {
         display: flex;
         gap: 13px;
@@ -346,8 +333,26 @@ $text-main: #F3F3F3;
         background-color: $color-secondary;
         border-radius: 3px;
     }
+}
 
+.whish-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: $text-main;
+    padding: 10px 20px;
+    background-color: $background-highligth;
+    border-radius: 3px;
 
+    &:hover {
+        background-color: $color-secondary;
+    }
+
+    .svg-container {
+        width: 24px;
+        height: 24px;
+        padding: 3px 2px;
+    }
 }
 
 .sale-main-img {
@@ -360,10 +365,32 @@ $text-main: #F3F3F3;
 }
 
 .section-header {
-    font-size: 18px;
-    font-weight: 700;
-    line-height: normal;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 30px;
+
+
+    h2 {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    a {
+        font-size: 16px;
+        color: $text-dim;
+        padding: 5px 10px;
+        border-radius: 3px;
+        border: 1px solid rgba(118, 128, 140, 0.20);
+    }
+
+    a:hover {
+        background-color: $background-tertiary;
+        color: $text-main;
+        border-color: $background-hover;
+    }
+
 }
 
 
@@ -379,6 +406,124 @@ $text-main: #F3F3F3;
         fill: $text-main;
     }
 }
+
+/* Special offer section styles */
+
+.special-offers-section {
+    .swiper-slide-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    h3 {
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 45px;
+
+
+    }
+
+    .sell-item-link {
+        &:hover {
+            color: $text-dim;
+        }
+    }
+
+    .sell-item-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .expire-date {
+        font-size: 14px;
+        color: $text-dim;
+    }
+
+    .price-block {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .discount-banner {
+        background-color: $accent-green;
+        padding: 10px;
+        border-radius: 3px;
+        color: $background-main;
+    }
+
+    .discount-prices {
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .discount-original-price {
+        color: $background-hover;
+        position: relative;
+
+        &::after {
+            content: '';
+            display: inline-block;
+            height: 1px;
+            width: calc(100% - 6px);
+            background-color: $text-dim;
+            position: absolute;
+            top: 50%;
+            left: 3px;
+        }
+    }
+
+    .discount_final_price {
+        color: $accent-green;
+    }
+
+    .whish-btn {
+        padding: 10px;
+    }
+}
+
+/* Browse steam section styles */
+.browse-steam-section {
+
+    .swiper-slide-content {
+        padding: 0;
+    }
+
+
+    .genre-img::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(217, 217, 217, 0.01);
+        backdrop-filter: blur(1px);
+    }
+
+    .genre-img:hover {
+        scale: 1.01;
+        &::after {
+                    backdrop-filter: blur(0);
+        }
+    }
+
+
+    .swiper-slide-content {
+        position: relative;
+    }
+
+    .genre-title {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+
+
+}
+
 
 /* Responsive styles */
 
