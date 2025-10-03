@@ -6,6 +6,7 @@ $color-secondary: #4B619B;
 $text-dim: #76808C;
 $text-main: #F3F3F3;
 $accent-green: #A1CD44;
+$primary-color: #66C0F4;
 
 
 .store-header {
@@ -200,7 +201,8 @@ section {
 /* Hero section styles */
 
 .hero-section {
-    height: 620px;
+    height: auto;
+    margin-bottom: 100px;
 
     a {
         display: block;
@@ -236,11 +238,37 @@ section {
 .featured-section {
 
 
-
     .swiper-slide-content {
         display: grid;
-        grid-template-columns: auto 470px;
+        grid-template-columns: auto 1fr;
         gap: 17px;
+
+
+        grid-template-areas:
+            "main-img description"
+            "main-img img-list"
+            "main-img tags-block"
+            "main-img bottom-block"
+    }
+
+    .sale-main-img {
+        grid-area: main-img;
+    }
+
+    .item-description {
+        grid-area: description;
+    }
+
+    .add-info {
+        grid-area: add-info;
+    }
+
+    .game-images-list {
+        grid-area: img-list;
+    }
+
+    .sale-game-block-bottom {
+        grid-area: bottom-block;
     }
 
     .sale-game-block {
@@ -254,6 +282,7 @@ section {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 7px;
+
 
         img:hover {
             scale: 1.05;
@@ -277,6 +306,8 @@ section {
         display: flex;
         gap: 4px;
         align-items: center;
+        white-space: nowrap;
+        align-self: flex-end;
 
         li:last-child {
 
@@ -296,6 +327,8 @@ section {
     .tags-block {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        gap: 10px;
     }
 
     .tags-link {
@@ -319,6 +352,7 @@ section {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 10px;
 
     }
 
@@ -326,6 +360,7 @@ section {
         display: flex;
         gap: 13px;
         align-items: center;
+        align-self: flex-end;
     }
 
     .buy-product {
@@ -359,6 +394,10 @@ section {
     width: 100%;
     height: 100%;
 
+    img {
+        object-fit: fill;
+    }
+
     &:hover {
         scale: 1.01;
     }
@@ -390,52 +429,146 @@ section {
         color: $text-main;
         border-color: $background-hover;
     }
-
 }
 
-
-
 .system-required {
+
     svg * {
         fill: $text-dim;
     }
 }
 
 .whish-btn {
+    align-self: flex-end;
+
     svg * {
         fill: $text-main;
     }
 }
 
-/* Special offer section styles */
+@media screen and (max-width: 1300px) {
+    .featured-section {
 
-.special-offers-section {
-    .swiper-slide-content {
+        .swiper-slide-content {
+            grid-template-areas:
+
+                "main-img img-list"
+                "main-img tags-block"
+                "description bottom-block"
+        }
+    }
+
+}
+
+@media screen and (max-width: 1100px) {
+    .featured-section {
+        .swiper-slide-content {
+            grid-template-columns: 1fr;
+            grid-template-areas: "main-img "
+                "img-list"
+                "description"
+                "tags-block"
+                "bottom-block"
+
+        }
+
+        .slick-slide>div {
+            padding: 0;
+        }
+    }
+
+}
+
+@media screen and (max-width: 550px) {
+    .featured-section {
+        .whish-btn {
+            padding: 10px;
+
+            span {
+                display: none;
+            }
+        }
+
+        .game-tags-list li:nth-child(n+2) {
+            display: none;
+        }
+
+        .buy-product {
+            padding: 10px;
+        }
+
+        .custom-prev,
+        .custom-next {
+            display: none;
+        }
+
+        .system-required {
+            align-self: flex-end;
+        }
+    }
+
+}
+
+
+
+
+
+/* Styles for Slider Section */
+.slider-section {
+
+    .swiper-slide-content,
+    .slide-content {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         gap: 8px;
     }
 
-    h3 {
+    .swiper-slide-content.horizontal {
+        flex-direction: row;
+        justify-content: start;
+
+        .sell-item-info,
+        .slide-info-block {
+            flex-grow: 1;
+        }
+
+        .sell-item-title,
+        .slide-info-block {
+            margin-bottom: 10px;
+        }
+
+    }
+
+    .sell-item-title,
+    .slide-title {
         font-size: 22px;
         font-weight: 700;
         line-height: 45px;
 
-
-    }
-
-    .sell-item-link {
-        &:hover {
+        a:hover {
             color: $text-dim;
         }
+
     }
 
-    .sell-item-bottom {
+    .sell-item-bottom,
+    .slide-bottom {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        // gap: 27px;
     }
+
+    .original-price {
+        margin-left: auto;
+    }
+}
+
+/* Special offer section styles */
+
+.special-offers-section {
+
 
     .expire-date {
         font-size: 14px;
@@ -453,6 +586,10 @@ section {
         padding: 10px;
         border-radius: 3px;
         color: $background-main;
+    }
+
+    .original-price {
+        margin-left: auto;
     }
 
     .discount-prices {
@@ -503,8 +640,9 @@ section {
 
     .genre-img:hover {
         scale: 1.01;
+
         &::after {
-                    backdrop-filter: blur(0);
+            backdrop-filter: blur(0);
         }
     }
 
@@ -519,11 +657,130 @@ section {
         top: 50%;
         transform: translate(-50%, -50%);
     }
+}
+
+/* Streaming section styles */
 
 
+.streaming-section {
+    .viewer_bar {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+
+        svg * {
+            fill: $primary-color;
+        }
+    }
+
+    .viewer_count {
+        color: $primary-color;
+    }
+
+    .viewer-link {
+        padding: 12px 17px;
+        border-radius: 3px;
+
+        background-color: $background-highligth;
+
+        &:hover {
+            background-color: $background-hover;
+        }
+    }
+}
+
+/* Free to play section styles */
+.free-toPlay-section {
+
+    .play-now-btn {
+        color: $background-main;
+        font-size: 18px;
+        font-weight: 700;
+        background-color: $accent-green;
+        padding: 11px 16px;
+        border-radius: 3px;
+
+        &:hover {
+            background-color: #a6e223;
+        }
+    }
+
+    .price-block.free {
+        margin-left: auto;
+        color: $text-dim;
+    }
 
 }
 
+
+/* Recently updated section styles */
+
+.recently-updated-section {
+    .swiper-slide-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 13px;
+    }
+
+    .slide-item-link {
+        &:hover {
+            color: $text-dim;
+        }
+    }
+
+    hgroup {
+        margin-bottom: 13px;
+    }
+
+    .slide-item-title {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .slide-item-text {
+        font-size: 16px;
+        display: -webkit-box;
+        /* Enables the flexible box layout for line clamping */
+        -webkit-box-orient: vertical;
+        /* Specifies the orientation of the flex container */
+        -webkit-line-clamp: 3;
+        /* Limits the text to a specific number of lines (e.g., 3) */
+        overflow: hidden;
+        /* Hides any overflowing content */
+        text-overflow: ellipsis;
+    }
+
+    .slide-item-bottom {
+        display: flex;
+        gap: 13px;
+
+        button {
+            padding: 12px 17px;
+            border-radius: 3px;
+        }
+    }
+
+    .in-whishList-btn {
+        border: 1px solid $background-highligth;
+
+        &:hover {
+            background-color: $background-hover;
+        }
+    }
+
+    .viewUpdates-btn {
+        background-color: $background-highligth;
+        border: 1px solid $background-highligth;
+
+        &:hover {
+            background-color: $background-hover;
+        }
+    }
+
+}
 
 /* Responsive styles */
 

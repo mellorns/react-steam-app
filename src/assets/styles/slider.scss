@@ -10,11 +10,12 @@ $background-main: #0E141B;
     border-radius: 5px;
 }
 
-.swiper-slide-content {
+.swiper-slide-content,
+.slide-content {
     padding: 15px;
     background-color: #0E141B;
     border-radius: 5px;
-    
+
 }
 
 .slick-list {
@@ -23,6 +24,12 @@ $background-main: #0E141B;
 
 .slick-slide>div {
     padding: 0 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.slick-slide>div:not(:last-child) {
+    margin-bottom: 10px;
 }
 
 .custom-prev svg,
@@ -127,4 +134,14 @@ $background-main: #0E141B;
     background-color: #4B619B;
     opacity: 1;
     transform: scale(1.2);
+}
+
+
+@media screen and (max-width:800px) {
+    .swiper-container {
+        padding: 10px;
+    }
+
+  
+
 }

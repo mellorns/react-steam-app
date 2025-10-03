@@ -1,21 +1,26 @@
 import { useState } from "react"
+import { countPriceWithDiscount } from "../../helpers/helper"
 
-export default function SpecialOrderSlide() {
+export default function SellCardSlide({ data, horizontal }) {
     const [lightBoxImg, setLightBoxImg] = useState(null)
 
     const openLigthBox = (src) => setLightBoxImg(src)
     const closeLigthBox = () => setLightBoxImg(null)
 
+    const finalPrice = countPriceWithDiscount(data.price, data.discount)
+
+
+
     return (
-        <div className='swiper-slide-content'>
+        <div className={`swiper-slide-content ${horizontal && 'horizontal'}`}>
             <div className="sell-item-img">
                 <a href="#">
-                    <img src="images/special_offer_1_img.png" alt="" />
+                    <img src={data.img} alt="" />
                 </a>
             </div>
             <div className="sell-item-info">
-                <h3>
-                    <a href="#" className="sell-item-link">
+                <h3 className="sell-item-title">
+                    <a href="#" >
                         The Last of Us: Part 1
                     </a>
                 </h3>
@@ -25,22 +30,30 @@ export default function SpecialOrderSlide() {
                             <use xlinkHref="images/sprite.svg#windows_icon"></use>
                         </svg>
                     </div>
-                    <div className="expire-date">
-                        Until Nov 2
-                    </div>
-                    <div className="price-block">
-                        <div className="discount-banner">
-                            -20%
+                    {data.expDate &&
+                        <div className="expire-date">
+                            {data.expDate}
                         </div>
-                        <div className="discount-prices">
-                            <div className="discount-original-price">
-                                $59.99
+                    }
+                    {data.discount ?
+                        <div className="price-block">
+                            <div className="discount-banner">
+                                {`-${data.discount}%`}
                             </div>
-                            <div className="discount_final_price">
-                                $47.99
+                            <div className="discount-prices">
+                                <div className="discount-original-price">
+                                    {`$${data.price}`}
+                                </div>
+                                <div className="discount_final_price">
+                                    {`$${finalPrice}`}
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        :
+                        <div className="original-price">
+                            {`$${data.price}`}
+                        </div>
+                    }
                     <button className='whish-btn'>
                         <div className="svg-container">
                             <svg>

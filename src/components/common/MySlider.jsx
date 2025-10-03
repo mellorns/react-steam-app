@@ -24,14 +24,15 @@ function SamplePrevArrow(props) {
     );
 }
 
-export default function MySlider({ children, slides = 1 }) {
+export default function MySlider({ children, slides = 1, rows = 1, slidesPerRow = 1 }) {
     const settings = {
-        dots: true,
         infinite: true,
         speed: 500,
         slidesToShow: slides,
         slidesToScroll: 1,
         dots: true,
+        rows: rows,
+        slidesPerRow: slidesPerRow,
         dotsClass: "slick-dots slick-thumb",
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />,
