@@ -31,6 +31,40 @@ export default function BrowseSteamSection() {
         },
     ]
 
+
+    const config = {
+        slidesToShow: 5,
+        rows: 1,
+        slidesPerRow: 1,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 4,
+                }
+            },
+            {
+                breakpoint: 900,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 700,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 500,
+                settings: {
+                    slidesToShow: 1,
+                }
+            },
+        ]
+    }
+
+
     return (
         <section className='browse-steam-section'>
             <div className="container">
@@ -39,7 +73,7 @@ export default function BrowseSteamSection() {
                     <a href="#">See more</a>
                 </div>
                 <div className='swiper-container'>
-                    <MySlider slides={5} spaceBetween={20}>
+                    <MySlider config={config}>
                         {data.map((item, i) => {
                             return <BrowseSteamSectionSlide data={item} key={i} />
                         })}

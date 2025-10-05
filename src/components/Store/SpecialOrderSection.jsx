@@ -23,7 +23,7 @@ export default function SpecialOrderSection() {
             img: 'images/special_offer_1_img.png',
             title: 'The Last of Us: Part 1',
             expDate: 'Until Nov 2',
-               discount: 20,
+            discount: 20,
             price: 59.99,
         },
         {
@@ -37,11 +37,40 @@ export default function SpecialOrderSection() {
             img: 'images/special_offer_1_img.png',
             title: 'The Last of Us: Part 1',
             expDate: 'Until Nov 2',
-             discount: 20,
+            discount: 20,
             price: 59.99,
         },
 
     ]
+
+
+    const config = {
+        slidesToShow: 3,
+        rows: 1,
+        slidesPerRow: 1,
+        responsive: [
+             {
+                breakpoint: 2000,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 1400,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 950,
+                settings: {
+                    slidesToShow: 1,
+                }
+            },
+        ]
+    }
+
+
 
     return (
         <section className='special-offers-section slider-section'>
@@ -51,9 +80,9 @@ export default function SpecialOrderSection() {
                     <a href="#">See more</a>
                 </div>
                 <div className='swiper-container'>
-                    <MySlider slides={3} spaceBetween={20}>
+                    <MySlider config={config}>
                         {data.map((item, i) => {
-                            return <SellCardSlide data={item} key={i}/>
+                            return <SellCardSlide data={item} key={i} />
                         })}
                     </MySlider>
                 </div>

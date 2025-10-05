@@ -24,6 +24,31 @@ export default function StreamingSection() {
         },
     ]
 
+    const config = {
+        slidesToShow: 3,
+        rows: 1,
+        slidesPerRow: 1,
+        responsive: [
+            {
+                breakpoint: 2000,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 1400,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 950,
+                settings: {
+                    slidesToShow: 1,
+                }
+            },
+        ]
+    }
     return (
         <section className='streaming-section slider-section'>
             <div className="container">
@@ -32,7 +57,7 @@ export default function StreamingSection() {
                     <a href="#">See more</a>
                 </div>
                 <div className='swiper-container'>
-                    <MySlider slides={3}>
+                    <MySlider config={config}>
                         {data.map((item, i) => {
                             return <StreamingSlide data={item} key={i} />
                         })}

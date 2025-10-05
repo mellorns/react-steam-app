@@ -21,15 +21,15 @@ export default function StoreHome() {
                     <img src="images/hero_img.png" alt="" />
                 </NavLink>
             </div>
-            {/* <FeaturedSection /> */}
+            <FeaturedSection />
             <SpecialOrderSection />
-            {/* <BrowseSteamSection />
+            <BrowseSteamSection />
             <FreeToPlaySection />
             <RecentlyUpdatedSection />
             <NewTrendingSection />
             <TopSellersSection />
             <SellItemsSection />
-            <StreamingSection /> */}
+            <StreamingSection />
         </>
     )
 }

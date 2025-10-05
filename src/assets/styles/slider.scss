@@ -24,8 +24,6 @@ $background-main: #0E141B;
 
 .slick-slide>div {
     padding: 0 10px;
-    display: flex;
-    gap: 10px;
 }
 
 .slick-slide>div:not(:last-child) {
@@ -127,8 +125,6 @@ $background-main: #0E141B;
 
 
 
-.custom-pagination .swiper-pagination-bullet {}
-
 
 .slick-dots.slick-dots .slick-active {
     background-color: #4B619B;
@@ -142,6 +138,15 @@ $background-main: #0E141B;
         padding: 10px;
     }
 
-  
+    .custom-prev,
+    .custom-next {
+        display: none;
+    }
+}
 
+@media screen and (max-width:500px) {
+
+    .slick-slide>div {
+        padding: 0;
+    }
 }

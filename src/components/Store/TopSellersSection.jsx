@@ -47,6 +47,34 @@ export default function TopSellersSection() {
             price: '59.99',
         },
     ]
+
+    const config = {
+        rows: 3,
+        slidesPerRow: 2,
+        responsive: [
+            {
+                breakpoint: 20000,
+                settings: {
+                    slidesPerRow: 2,
+                    rows: 3,
+                }
+            },
+            {
+                breakpoint: 1400,
+                settings: {
+                    slidesPerRow: 1,
+                    rows: 1,
+                }
+            },
+            {
+                breakpoint: 700,
+                settings: {
+                    rows: 1,
+                    slidesPerRow: 1,
+                }
+            },
+        ]
+    }
     return (
         <section className='top-sellers-section slider-section'>
             <div className="container">
@@ -55,7 +83,7 @@ export default function TopSellersSection() {
                     <a href="#">See more</a>
                 </div>
                 <div className='swiper-container'>
-                    <MySlider rows={3} slidesPerRow={2}>
+                    <MySlider config={config}>
                         {data.map((item, i) => {
                             return (
                                 <div key={i} className="row-item">
