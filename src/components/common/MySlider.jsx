@@ -28,30 +28,6 @@ function SamplePrevArrow(props) {
 
 export default function MySlider({ children, config }) {
 
-    // const [settings, setSettings] = useState({
-    //     infinite: true,
-    //     speed: 500,
-    //     slidesToShow: 1,
-    //     slidesToScroll: 1,
-    //     dots: true,
-    //     rows: 1,
-    //     slidesPerRow: 1,
-    //     dotsClass: "slick-dots slick-thumb",
-    //     nextArrow: <SampleNextArrow />,
-    //     prevArrow: <SamplePrevArrow />,
-    //     ...config
-    // })
-
-    // useEffect(() => {
-    //     let slides = settings.slidesToShow
-    //     settings.responsive.forEach((brkp) => {
-    //         if (brkp.breakpoint >= window.innerWidth) {
-    //             slides = brkp.settings.slidesToShow
-    //         }
-    //     })
-    //     setSettings({ ...settings, slidesToShow: slides })
-    // }, [])
-
     const settings = {
         infinite: true,
         speed: 500,

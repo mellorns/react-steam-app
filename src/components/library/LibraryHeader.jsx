@@ -18,21 +18,19 @@ export default function LibraryHeader() {
     }
 
     return (
-        <div className={`store-header ${isSearchOpen ? 'search-open' : ''}`}>
-            <div className='store-header-left'>
-                <ul className="store-header-navigation">
+        <div className={`library-header ${isSearchOpen ? 'search-open' : ''}`}>
+            <div className='library-header-left'>
+                <ul className="library-header-navigation">
                     <li>
-                        <NavLink className='store-navigation-link' to="/">Home</NavLink>
+                        <NavLink className='library-navigation-link' to="/library">Home</NavLink>
                     </li>
                     <li>
-                        <NavLink className='store-navigation-link' to="/browse">Browse</NavLink>
+                        <NavLink className='library-navigation-link' to="/browse">Collections</NavLink>
                     </li>
                     <li>
-                        <NavLink className='store-navigation-link' to="/discover">Discover</NavLink>
+                        <NavLink className='library-navigation-link' to="/discover">News and Updates</NavLink>
                     </li>
-                    <li>
-                        <NavLink className='store-navigation-link' to="/point_shop">Points Shop</NavLink>
-                    </li>
+
                 </ul>
                 <div className='more' onMouseLeave={() => setIsOpen(false)}>
                     <button className='more-btn' onClick={() => setIsOpen(!isOpen)}>
@@ -45,27 +43,15 @@ export default function LibraryHeader() {
                     </button>
 
                     <div className={`more-dropdown ${isOpen ? 'isOpen' : ''}`} >
-                        <ul className="store-header-navigation">
+                        <ul className="library-header-navigation">
                             <li>
-                                <NavLink className='store-navigation-link' to="/">Home</NavLink>
+                                <NavLink className='library-navigation-link' to="/">Home</NavLink>
                             </li>
                             <li>
-                                <NavLink className='store-navigation-link' to="/browse">Browse</NavLink>
+                                <NavLink className='library-navigation-link' to="/browse">Browse</NavLink>
                             </li>
                             <li>
-                                <NavLink className='store-navigation-link' to="/discover">Discover</NavLink>
-                            </li>
-                            <li>
-                                <NavLink className='store-navigation-link' to="/point_shop">Points Shop</NavLink>
-                            </li>
-                            <li>
-                                <NavLink className='store-navigation-link' to="/curators">Curators</NavLink>
-                            </li>
-                            <li>
-                                <NavLink className='store-navigation-link' to="/gift_cards">Gift Cards</NavLink>
-                            </li>
-                            <li>
-                                <NavLink className='store-navigation-link' to="/news">News</NavLink>
+                                <NavLink className='library-navigation-link' to="/discover">Discover</NavLink>
                             </li>
                         </ul>
                     </div>
@@ -86,22 +72,66 @@ export default function LibraryHeader() {
                     </button>
                 </form>
             </div>
-            <div className='store-header-rigth'>
-                <ul className="store-header-navigation">
+            <div className='library-header-rigth'>
+                <ul className='filters-list'>
                     <li>
-                        <NavLink className='store-navigation-link' to="/whishlist">Wishlist</NavLink>
+                        <div className='svg-container'>
+                            <svg>
+                                <use xlinkHref="images/sprite.svg#filter_icon"></use>
+                            </svg>
+                        </div>
                     </li>
                     <li>
-                        <NavLink className='store-navigation-link' to="/cart">Cart</NavLink>
+                        <div className='svg-container'>
+                            <svg>
+                                <use xlinkHref="images/sprite.svg#clock_icon"></use>
+                            </svg>
+                        </div>
+                    </li>
+                    <li>
+                        <div className='svg-container'>
+                            <svg>
+                                <use xlinkHref="images/sprite.svg#play_icon"></use>
+                            </svg>
+                        </div>
                     </li>
                 </ul>
-                <button className='setting-btn'>
-                    <div className='svg-container'>
-                        <svg>
-                            <use xlinkHref="images/sprite.svg#settings-icon"></use>
-                        </svg>
-                    </div>
-                </button>
+                <div className='change-view-block'>
+                    <span>View</span>
+                    <ul className='view-list'>
+                        <li className='active'>
+                            <div className='svg-container'>
+                                <svg>
+                                    <use xlinkHref="images/sprite.svg#grid_view1"></use>
+                                </svg>
+                            </div>
+                        </li>
+                        <li>
+                            <div className='svg-container'>
+                                <svg>
+                                    <use xlinkHref="images/sprite.svg#grid_view"></use>
+                                </svg>
+                            </div>
+                        </li>
+                        <li>
+                            <div className='svg-container'>
+                                <svg>
+                                    <use xlinkHref="images/sprite.svg#grid_view3"></use>
+                                </svg>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <ul className="library-header-navigation">
+                    <li>
+                        <NavLink className='library-navigation-link' to="/">Activate a Product</NavLink>
+                    </li>
+                    <li>
+                        <NavLink className='library-navigation-link' to="/">Add a non-Steam Game</NavLink>
+                    </li>
+                </ul>
+
             </div>
         </div>
     )
