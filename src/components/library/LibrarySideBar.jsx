@@ -12,7 +12,7 @@ export default function LibrarySideBar({ changeSidebarWidth }) {
     useEffect(() => {
         function resizeSidebar(e) {
             if (!resize.current) return
-            if(e.clientX > 390) return
+            if (e.clientX > 390) return
             changeSidebarWidth(Math.max(220, e.clientX))
         }
 
@@ -52,7 +52,7 @@ export default function LibrarySideBar({ changeSidebarWidth }) {
                             <div className="img-container">
                                 <img src="images/game_img_mini_1.png" alt="" />
                             </div>
-                            <span>Bioshock</span>
+                            <div className="game-title">Bioshock</div>
                         </NavLink>
                     </li>
                     <li>
@@ -60,7 +60,7 @@ export default function LibrarySideBar({ changeSidebarWidth }) {
                             <div className="img-container">
                                 <img src="images/game_img_mini_1.png" alt="" />
                             </div>
-                            <span>Bioshock</span>
+                            <div className="game-title">Bioshock</div>
                         </NavLink>
                     </li>
                     <li>
@@ -68,7 +68,7 @@ export default function LibrarySideBar({ changeSidebarWidth }) {
                             <div className="img-container">
                                 <img src="images/game_img_mini_1.png" alt="" />
                             </div>
-                            <span>Bioshock</span>
+                            <div className="game-title">Bioshock</div>
                         </NavLink>
                     </li>
                     <li>
@@ -76,7 +76,7 @@ export default function LibrarySideBar({ changeSidebarWidth }) {
                             <div className="img-container">
                                 <img src="images/game_img_mini_1.png" alt="" />
                             </div>
-                            <span>Bioshock</span>
+                            <div className="game-title">Bioshock</div>
                         </NavLink>
                     </li>
                     <li>
@@ -84,7 +84,7 @@ export default function LibrarySideBar({ changeSidebarWidth }) {
                             <div className="img-container">
                                 <img src="images/game_img_mini_1.png" alt="" />
                             </div>
-                            <span>Bioshock</span>
+                            <div className="game-title">Bioshock</div>
                         </NavLink>
                     </li>
                     <li>
@@ -92,7 +92,7 @@ export default function LibrarySideBar({ changeSidebarWidth }) {
                             <div className="img-container">
                                 <img src="images/game_img_mini_1.png" alt="" />
                             </div>
-                            <span>Bioshock</span>
+                            <div className="game-title">Bioshock</div>
                         </NavLink>
                     </li>
                     <li>
@@ -100,7 +100,7 @@ export default function LibrarySideBar({ changeSidebarWidth }) {
                             <div className="img-container">
                                 <img src="images/game_img_mini_1.png" alt="" />
                             </div>
-                            <span>Bioshock</span>
+                            <div className="game-title">Bioshock</div>
                         </NavLink>
                     </li>
                     <li>
@@ -108,7 +108,7 @@ export default function LibrarySideBar({ changeSidebarWidth }) {
                             <div className="img-container">
                                 <img src="images/game_img_mini_1.png" alt="" />
                             </div>
-                            <span>Bioshock</span>
+                            <div className="game-title">Bioshock</div>
                         </NavLink>
                     </li>
                     <li>
@@ -116,7 +116,7 @@ export default function LibrarySideBar({ changeSidebarWidth }) {
                             <div className="img-container">
                                 <img src="images/game_img_mini_1.png" alt="" />
                             </div>
-                            <span>Bioshock</span>
+                            <div className="game-title">Bioshock</div>
                         </NavLink>
                     </li>
                     <li>
@@ -124,7 +124,7 @@ export default function LibrarySideBar({ changeSidebarWidth }) {
                             <div className="img-container">
                                 <img src="images/game_img_mini_1.png" alt="" />
                             </div>
-                            <span>Bioshock</span>
+                            <div className="game-title">Bioshock</div>
                         </NavLink>
                     </li>
                     <li>
@@ -132,7 +132,7 @@ export default function LibrarySideBar({ changeSidebarWidth }) {
                             <div className="img-container">
                                 <img src="images/game_img_mini_1.png" alt="" />
                             </div>
-                            <span>Bioshock</span>
+                            <div className="game-title">Bioshock</div>
                         </NavLink>
                     </li>
                     <li>
@@ -140,7 +140,7 @@ export default function LibrarySideBar({ changeSidebarWidth }) {
                             <div className="img-container">
                                 <img src="images/game_img_mini_1.png" alt="" />
                             </div>
-                            <span>Bioshock</span>
+                            <div className="game-title">Bioshock</div>
                         </NavLink>
                     </li>
                     <li>
@@ -148,7 +148,7 @@ export default function LibrarySideBar({ changeSidebarWidth }) {
                             <div className="img-container">
                                 <img src="images/game_img_mini_1.png" alt="" />
                             </div>
-                            <span>Bioshock</span>
+                            <div className="game-title">Bioshock</div>
                         </NavLink>
                     </li>
                     <li>
@@ -156,7 +156,7 @@ export default function LibrarySideBar({ changeSidebarWidth }) {
                             <div className="img-container">
                                 <img src="images/game_img_mini_1.png" alt="" />
                             </div>
-                            <span>Bioshock</span>
+                            <div className="game-title">Bioshock</div>
                         </NavLink>
                     </li>
                     <li>
@@ -164,7 +164,7 @@ export default function LibrarySideBar({ changeSidebarWidth }) {
                             <div className="img-container">
                                 <img src="images/game_img_mini_1.png" alt="" />
                             </div>
-                            <span>Bioshock</span>
+                            <div className="game-title">Bioshock</div>
                         </NavLink>
                     </li>
                     <li>
@@ -172,7 +172,7 @@ export default function LibrarySideBar({ changeSidebarWidth }) {
                             <div className="img-container">
                                 <img src="images/game_img_mini_1.png" alt="" />
                             </div>
-                            <span>Bioshock</span>
+                            <div className="game-title">Bioshock</div>
                         </NavLink>
                     </li>
                     <li>
@@ -180,57 +180,10 @@ export default function LibrarySideBar({ changeSidebarWidth }) {
                             <div className="img-container">
                                 <img src="images/game_img_mini_1.png" alt="" />
                             </div>
-                            <span>Bioshock</span>
+                            <div className="game-title">Bioshock</div>
                         </NavLink>
                     </li>
-                    <li>
-                        <NavLink to={'/'}>
-                            <div className="img-container">
-                                <img src="images/game_img_mini_1.png" alt="" />
-                            </div>
-                            <span>Bioshock</span>
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to={'/'}>
-                            <div className="img-container">
-                                <img src="images/game_img_mini_1.png" alt="" />
-                            </div>
-                            <span>Bioshock</span>
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to={'/'}>
-                            <div className="img-container">
-                                <img src="images/game_img_mini_1.png" alt="" />
-                            </div>
-                            <span>Bioshock</span>
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to={'/'}>
-                            <div className="img-container">
-                                <img src="images/game_img_mini_1.png" alt="" />
-                            </div>
-                            <span>Bioshock</span>
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to={'/'}>
-                            <div className="img-container">
-                                <img src="images/game_img_mini_1.png" alt="" />
-                            </div>
-                            <span>Bioshock</span>
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to={'/'}>
-                            <div className="img-container">
-                                <img src="images/game_img_mini_1.png" alt="" />
-                            </div>
-                            <span>Bioshock</span>
-                        </NavLink>
-                    </li>
+                    
                 </ul>
             </div>
             <div className="sidebar-resize-handle" onMouseDown={handleResize}></div>

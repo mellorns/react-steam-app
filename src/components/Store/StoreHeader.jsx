@@ -78,8 +78,6 @@ export default function StoreHeader() {
                             </li>
                         </ul>
                     </div>
-
-
                 </div>
             </div>
             <Overlay handleClick={closeeOverlay} isActive={isSearchOpen} />

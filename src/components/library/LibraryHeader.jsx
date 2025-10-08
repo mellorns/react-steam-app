@@ -17,6 +17,7 @@ export default function LibraryHeader() {
         setIsSearchOpen(false)
     }
 
+
     return (
         <div className={`library-header ${isSearchOpen ? 'search-open' : ''}`}>
             <div className='library-header-left'>
@@ -30,7 +31,6 @@ export default function LibraryHeader() {
                     <li>
                         <NavLink className='library-navigation-link' to="/discover">News and Updates</NavLink>
                     </li>
-
                 </ul>
                 <div className='more' onMouseLeave={() => setIsOpen(false)}>
                     <button className='more-btn' onClick={() => setIsOpen(!isOpen)}>
@@ -48,15 +48,19 @@ export default function LibraryHeader() {
                                 <NavLink className='library-navigation-link' to="/">Home</NavLink>
                             </li>
                             <li>
-                                <NavLink className='library-navigation-link' to="/browse">Browse</NavLink>
+                                <NavLink className='library-navigation-link' to="/browse">Collections</NavLink>
                             </li>
                             <li>
-                                <NavLink className='library-navigation-link' to="/discover">Discover</NavLink>
+                                <NavLink className='library-navigation-link' to="/discover">News and Updates</NavLink>
+                            </li>
+                            <li>
+                                <NavLink className='library-navigation-link' to="/">Activate a Product</NavLink>
+                            </li>
+                            <li>
+                                <NavLink className='library-navigation-link' to="/">Add a non-Steam Game</NavLink>
                             </li>
                         </ul>
                     </div>
-
-
                 </div>
             </div>
             <Overlay handleClick={closeeOverlay} isActive={isSearchOpen} />
@@ -131,7 +135,6 @@ export default function LibraryHeader() {
                         <NavLink className='library-navigation-link' to="/">Add a non-Steam Game</NavLink>
                     </li>
                 </ul>
-
             </div>
         </div>
     )

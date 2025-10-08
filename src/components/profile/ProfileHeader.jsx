@@ -1,15 +1,21 @@
-export default function ProfileHeader() {
+export default function ProfileHeader({ data }) {
+
+
+
+    if(!data) return
+
+
     return (
         <div className="profile-header">
             <div className="profile-header-content">
                 <div className="profile-header-avatar">
                     <div className="profile-header-avatar-frame">
-                        <img src="images/mini-profile.png" alt="" />
+                        <img src={data.avatarfull} alt="" />
                     </div>
                 </div>
                 <div className="profile-header-user-info">
                     <div className="profile-header-user-name">
-                        <span>Juxtopposed</span>
+                        <span>{data.personaname}</span>
                         <button>
                             <div className='svg-container'>
                                 <svg className='arrow-down'>
