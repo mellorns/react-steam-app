@@ -1,6 +1,14 @@
 import ProfileRecentActivity from "./ProfileRecentActivity";
 
-export default function ProfileMainContent() {
+export default function ProfileMainContent({ data }) {
+    // if (!data) return
+
+
+
+    // const IMG_URL = `https://media.steampowered.com/steamcommunity/public/images/apps/${data[0].appid}/${data[0].img_icon_url}.jpg`
+
+
+
     return (
         <div className="profile-main-content">
             <section className="items-container">

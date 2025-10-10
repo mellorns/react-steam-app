@@ -52,7 +52,7 @@ export default function SiteHeader() {
                             <NavLink to="/community">Community</NavLink>
                         </li>
                         <li>
-                            <NavLink to='/profile'>Profile</NavLink>
+                            <NavLink to='/profile/76561198297315433'>Profile</NavLink>
                         </li>
                         <li>
                             <NavLink to='/library'>Library</NavLink>

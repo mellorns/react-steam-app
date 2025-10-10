@@ -555,41 +555,7 @@
 .information-block {
     grid-area: info-block;
 
-    .achievements-list-header {
-        font-size: 14px;
-        color: common.$text-dim;
-        line-height: 30px;
-        margin-bottom: 15px;
-    }
 
-    .achievements-section {
-        display: grid;
-        grid-template-columns: 50% 50%;
-        gap: 7px;
-        width: 100%;
-        overflow: hidden;
-    }
-
-    .achievements-img-container {
-        background-color: common.$background-highligth;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 72px;
-        height: 72px;
-        overflow: hidden;
-    }
-
-    .achievements-list {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        width: 100%;
-        overflow: hidden;
-        white-space: nowrap;
-
-
-    }
 
     .locked-achievements-list {
         .achievements-img-container {
@@ -604,6 +570,42 @@
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 7px;
     }
+}
+
+.achievements-list-header {
+    font-size: 14px;
+    color: common.$text-dim;
+    line-height: 30px;
+    margin-bottom: 15px;
+}
+
+.achievements-section {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 7px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.achievements-img-container {
+    background-color: common.$background-highligth;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    overflow: hidden;
+}
+
+.achievements-list {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+
+
 }
 
 

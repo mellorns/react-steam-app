@@ -1,12 +1,7 @@
 @use '../src/assets/styles/fonts';
-@use '../src/assets/styles/common.scss';
+// @use '../src/assets/styles/common.scss';
+@use './assets//styles//common';
 
-
-$background-main-color: #0E141B;
-$background-highlight-color: #1E2329;
-$text-dim: #76808C;
-$text-main: #F3F3F3;
-$color-primary: #66C0F4;
 
 
 *,
@@ -31,13 +26,13 @@ svg * {
 
 button {
   border: none;
-  color: $text-main;
+  color: common.$text-main;
   font-size: 16px;
 }
 
 a {
   text-decoration: none;
-  color: $text-main;
+  color: common.$text-main;
 }
 
 button {
@@ -58,7 +53,7 @@ img {
 
 body {
   font-size: 1rem;
-  color: $text-main;
+  color: common.$text-main;
   font-family: "Motiva Sans", sans-serif;
 }
 
@@ -70,7 +65,7 @@ body {
 
   main {
     flex-grow: 1;
-    min-height: 600px;
+    // min-height: 600px;
     background: linear-gradient(180deg, #040011 13.77%, #202B3C 27.29%, #202B3C 27.29%);
   }
 }
@@ -92,11 +87,11 @@ body {
 .btn {
   font-family: "Motiva Sans";
   font-size: 16px;
-  background-color: $background-highlight-color;
+  background-color: common.$background-highligth;
   padding: 17px 25px;
   border: none;
   border-radius: 3px;
-  color: $text-main;
+  color: common.$text-main;
 
   &:hover {
     background-color: #1e2329a3
@@ -117,5 +112,20 @@ body {
   &.is-active {
     visibility: visible;
     opacity: 1;
+  }
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: common.$text-main;
+  padding: 17px 20px;
+  background-color: common.$background-highligth;
+  border-radius: 3px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: common.$color-secondary;
   }
 }

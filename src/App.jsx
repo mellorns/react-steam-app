@@ -7,8 +7,9 @@ import '../src/assets/styles/store/home.scss'
 import '../src/assets/styles/common.scss'
 import StoreLayout from './layout/StoreLayout'
 import LibraryLayout from './layout/LibraryLayout'
-import StoreHome from './pages/StoreHome'
+import StoreHome from './pages/Store/StoreHome'
 import LibraryHome from './pages/Library/LibraryHome'
+import GameDetails from './pages/Store/GameDetails'
 
 function App() {
 
@@ -18,11 +19,12 @@ function App() {
         <Route element={<DefaultLayout />}>
           <Route element={<StoreLayout />}>
             <Route path='/' element={<StoreHome />} />
+            <Route path='/game/:appid' element={<GameDetails />} />
           </Route>
           <Route element={<LibraryLayout />}>
-              <Route path='/library' element={<LibraryHome />}/>
+            <Route path='/library' element={<LibraryHome />} />
           </Route>
-          <Route path='/profile/' element={<Profile />} />
+          <Route path='/profile/:steamId' element={<Profile />} />
         </Route>
       </Routes>
     </HashRouter>

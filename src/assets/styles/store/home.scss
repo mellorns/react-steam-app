@@ -34,6 +34,7 @@ section {
             padding: 0 10px;
         }
     }
+
     margin-bottom: 100px;
 }
 
@@ -307,28 +308,6 @@ section {
         }
     }
 
-    .game-tags-list {
-        display: flex;
-        gap: 4px;
-        align-items: center;
-        white-space: nowrap;
-        align-self: flex-end;
-
-        li:last-child {
-
-
-
-            svg {
-                width: 15px;
-                height: 15px;
-            }
-
-            svg * {
-                fill: $text-dim;
-            }
-        }
-    }
-
     .tags-block {
         display: flex;
         justify-content: space-between;
@@ -336,22 +315,7 @@ section {
         gap: 10px;
     }
 
-    .tags-link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 12px;
-        color: $text-dim;
-        padding: 8px 13px;
-        background-color: $background-highligth;
-        border-radius: 3px;
 
-
-        &:hover {
-            color: $text-main;
-            background-color: $color-secondary;
-        }
-    }
 
     .sale-game-block-bottom {
         display: flex;
@@ -375,7 +339,45 @@ section {
     }
 }
 
-.whish-btn {
+.game-tags-list {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    white-space: nowrap;
+    align-self: flex-end;
+
+    li:last-child {
+        svg {
+            width: 15px;
+            height: 15px;
+        }
+
+        svg * {
+            fill: $text-dim;
+        }
+    }
+}
+
+
+
+.tags-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: $text-dim;
+    padding: 8px 13px;
+    background-color: $background-highligth;
+    border-radius: 3px;
+
+
+    &:hover {
+        color: $text-main;
+        background-color: $color-secondary;
+    }
+}
+
+.wish-btn {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -443,7 +445,7 @@ section {
     }
 }
 
-.whish-btn {
+.wish-btn {
     align-self: flex-end;
 
     svg * {
@@ -486,7 +488,7 @@ section {
 
 @media screen and (max-width: 550px) {
     .featured-section {
-        .whish-btn {
+        .wish-btn {
             padding: 10px;
 
             span {
@@ -595,7 +597,7 @@ section {
 @media screen and (max-width: 600px) {
     .slider-section {
 
-        .whish-btn {
+        .wish-btn {
             position: absolute;
             top: 20px;
             right: 20px;
@@ -613,58 +615,57 @@ section {
 
 .special-offers-section {
 
-
-    .expire-date {
-        font-size: 14px;
-        color: $text-dim;
-    }
-
-    .price-block {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .discount-banner {
-        background-color: $accent-green;
-        padding: 10px;
-        border-radius: 3px;
-        color: $background-main;
-    }
-
-    .original-price {
-        margin-left: auto;
-        margin-right: 10px;
-    }
-
-    .discount-prices {
-        font-size: 18px;
-        font-weight: 700;
-    }
-
-    .discount-original-price {
-        color: $background-hover;
-        position: relative;
-
-        &::after {
-            content: '';
-            display: inline-block;
-            height: 1px;
-            width: calc(100% - 6px);
-            background-color: $text-dim;
-            position: absolute;
-            top: 50%;
-            left: 3px;
-        }
-    }
-
-    .discount_final_price {
-        color: $accent-green;
-    }
-
-    .whish-btn {
+    .wish-btn {
         padding: 10px;
     }
+}
+
+.expire-date {
+    font-size: 14px;
+    color: $text-dim;
+}
+
+.price-block {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.discount-banner {
+    background-color: $accent-green;
+    padding: 10px;
+    border-radius: 3px;
+    color: $background-main;
+}
+
+.original-price {
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.discount-prices {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.discount-original-price {
+    color: $background-hover;
+    position: relative;
+
+    &::after {
+        content: '';
+        display: inline-block;
+        height: 1px;
+        width: calc(100% - 6px);
+        background-color: $text-dim;
+        position: absolute;
+        top: 50%;
+        left: 3px;
+    }
+}
+
+.discount_final_price {
+    color: $accent-green;
 }
 
 /* Browse steam section styles */

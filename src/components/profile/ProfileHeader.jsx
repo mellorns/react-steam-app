@@ -1,8 +1,8 @@
-export default function ProfileHeader({ data }) {
+export default function ProfileHeader({ data = {}}) {
 
 
 
-    if(!data) return
+    // if(!data) return
 
 
     return (
@@ -10,12 +10,12 @@ export default function ProfileHeader({ data }) {
             <div className="profile-header-content">
                 <div className="profile-header-avatar">
                     <div className="profile-header-avatar-frame">
-                        <img src={data.avatarfull} alt="" />
+                        <img src={data?.avatarfull ? data.avatarfull : 'images/avatar.png'} alt="" />
                     </div>
                 </div>
                 <div className="profile-header-user-info">
                     <div className="profile-header-user-name">
-                        <span>{data.personaname}</span>
+                        <span>{data?.personaname}</span>
                         <button>
                             <div className='svg-container'>
                                 <svg className='arrow-down'>

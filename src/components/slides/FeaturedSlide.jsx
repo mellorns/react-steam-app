@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { SwiperSlide } from "swiper/react"
+import { NavLink } from "react-router"
 
 export default function FeaturedSlide() {
     const [lightBoxImg, setLightBoxImg] = useState(null)
@@ -12,7 +12,9 @@ export default function FeaturedSlide() {
     return (
         <div className='swiper-slide-content'>
             <div className='sale-main-img'>
-                <img src="images/slider_1_1.png" alt="" />
+                <NavLink to={`/game/${2778580}`}>
+                    <img src="images/slider_1_1.png" alt="" />
+                </NavLink>
             </div>
             {/* <div className="add-info sale-game-block"> */}
             <div className='item-description'>
