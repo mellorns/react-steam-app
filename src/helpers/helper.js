@@ -7,3 +7,9 @@ function roundAfterPoint(num, decimal) {
     const factor = Math.pow(10, decimal)
     return Math.trunc(num * factor) / factor
 }
+
+
+
+export function createSlug(str) {
+    return str.split(' ').join('_')
+}

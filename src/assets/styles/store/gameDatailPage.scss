@@ -2,6 +2,10 @@
 
 
 .game-detail-page {
+
+    background: linear-gradient(180deg, #0E141B 7%, #202B3B 39.65%) no-repeat center/ cover fixed;
+
+
     .container {
         padding-top: 45px;
         width: min(90%, 1500px);
@@ -119,7 +123,8 @@
     .content-block {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        // justify-content: space-between;
+        gap: 30px;
     }
 
     .content-block-img {
@@ -259,12 +264,15 @@
 
     .game-tags-list {
         align-self: flex-start;
+        overflow: hidden;
+
     }
 
-    .system-required {
+    .platforms-list {
         margin-left: auto;
         margin-right: 90px;
     }
+
 
     .addToCard-btn {
         background-color: common.$color-secondary;
@@ -310,14 +318,8 @@
     }
 
     .game-description-list {
-        dt {
-            color: common.$primary-color;
-            margin-bottom: 10px;
-            font-size: 1.125rem;
-        }
-
-        dd:not(:last-child) {
-            margin-bottom: 40px;
+        .bb_tag {
+            margin-top: 20px;
         }
     }
 
@@ -476,5 +478,49 @@
         }
     }
 
+    .original-price {
+        margin-left: 0;
+    }
+
+    .trailer-video {
+        width: 100%;
+    }
+
+    .system-requirements-block {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        &>div>strong {
+            display: inline-block;
+            color: common.$text-dim;
+            margin-bottom: 10px;
+        }
+    }
+
+    .bb_ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        list-style: disc;
+        padding-left: 20px;
+        line-height: 18px;
+
+        li {
+            &::marker {
+                color: common.$text-dim;
+                font-size: .775rem;
+            }
+
+            strong {
+                color: common.$text-dim;
+                min-width: 172px;
+                display: inline-block;
+                text-transform: none;
+                margin-bottom: 5px;
+            }
+        }
+
+
+    }
 
 }

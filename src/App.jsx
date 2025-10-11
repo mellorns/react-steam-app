@@ -19,7 +19,7 @@ function App() {
         <Route element={<DefaultLayout />}>
           <Route element={<StoreLayout />}>
             <Route path='/' element={<StoreHome />} />
-            <Route path='/game/:appid' element={<GameDetails />} />
+            <Route path='/game/:appid/:slug' element={<GameDetails />} />
           </Route>
           <Route element={<LibraryLayout />}>
             <Route path='/library' element={<LibraryHome />} />

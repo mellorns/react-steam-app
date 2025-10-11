@@ -3,37 +3,30 @@ import { NavLink, useParams } from "react-router";
 import MySlider from "../../components/common/MySlider";
 
 import '../../assets/styles/store/gameDatailPage.scss'
-import SellCardSlide from "../../components/slides/SellCardSlide";
-import { countPriceWithDiscount } from "../../helpers/helper";
 import ResponsiveList from "../../components/common/ResponsiveList";
 
 export default function GameDetails() {
     const { appid } = useParams();
-    const [game, setGame] = useState(null);
-
-    // useEffect(() => {
-    //     async function loadGame() {
-    //         const res = await fetch(`http://localhost:3000/api/steam/game/${appid}`);
-    //         const data = await res.json();
-    //         setGame(data);
-    //         console.log(data);
-
-    //     }
-
-    //     loadGame();
-    // }, [appid]);
-
-    // if (!game) return <div>Loading...</div>;
+    const [gameData, setGameData] = useState(null);
+    const [lightBoxImg, setLightBoxImg] = useState(null)
 
 
+    useEffect(() => {
+        async function loadGame() {
+            const res = await fetch(`http://localhost:3000/api/steam/game/${appid}`);
+            const data = await res.json();
+            setGameData(data);
+        }
 
-    const images = [
-        { img: 'images/slider_1_2.png' },
-        { img: 'images/slider_1_3.png' },
-        { img: 'images/slider_1_4.png' },
-        { img: 'images/slider_1_5.png' },
-    ]
+        loadGame();
+    }, [appid]);
 
+
+    const openLigthBox = (src) => setLightBoxImg(src)
+    const closeLigthBox = () => setLightBoxImg(null)
+
+
+    if (!gameData) return <div>Loading...</div>;
 
     const achievmentsGainerList = [
         {
@@ -93,22 +86,15 @@ export default function GameDetails() {
             },
         ]
     }
-
-    const data = {
-        img: 'images/special_offer_1_img.png',
-        title: 'The Last of Us: Part 1',
-        expDate: 'Until Nov 2',
-        discount: 20,
-        price: 59.99,
-    }
-
-    const finalPrice = countPriceWithDiscount(data.price, data.discount)
+    const backgroundUrl = gameData?.background || gameData?.background_raw;
 
     return (
-        <div className="game-detail-page">
+        <div className="game-detail-page" style={{
+            backgroundImage: `url(${backgroundUrl})`,
+        }} >
             <div className="container">
                 <div className="detail-page-header">
-                    <h2>Elden Ring</h2>
+                    <h2>{gameData.name}</h2>
                     <div className="action-container">
                         <div>
                             <button className="action-btn ignore-btn">Ignore</button>
@@ -135,23 +121,37 @@ export default function GameDetails() {
                 <div className="block general-block">
                     <div className="slider-block">
                         <div className="main-img-container">
-                            <img src="images/game_main_img.png" alt="" />
+                            <video
+                                controls
+                                poster={gameData.movies[0].thumbnail}
+                                className="trailer-video"
+                                autoPlay
+                            >
+                                <source src={gameData.movies[0].mp4?.max || movie.mp4?.["480"]} type="video/mp4" />
+                                <source src={gameData.movies[0].webm?.max || movie.webm?.["480"]} type="video/webm" />
+                                Ваш браузер не підтримує відтворення відео.
+                            </video>
                         </div>
                         <div className="slider-wrapper">
                             <MySlider config={config}>
-                                {images.map((item, i) => {
-                                    return <img src={item.img} />
+                                {gameData.screenshots.map((item, i) => {
+                                    return <img src={item.path_thumbnail} onClick={() => openLigthBox(item.path_full)} />
                                 })}
                             </MySlider>
                         </div>
+                        {lightBoxImg &&
+                            <div className='ligthBox' onClick={closeLigthBox}>
+                                <img src={lightBoxImg} alt="" />
+                            </div>
+                        }
 
                     </div>
                     <div className="content-block">
                         <div className="content-block-img">
-                            <img src="images/slider_1_1.png" alt="" />
+                            <img src={gameData.header_image} alt="" />
                         </div>
                         <p className="about-game">
-                            THE NEW FANTASY ACTION RPG. Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.
+                            {gameData.short_description}
                         </p>
                         <div className="reviews-block">
                             <span>Reviews</span>
@@ -206,83 +206,63 @@ export default function GameDetails() {
                         </div>
                         <div className="content-row">
                             <div className="row-title">Release Date</div>
-                            <div className="row-content"><time dateTime="25.02.2022">25 Feb 2022</time></div>
+                            <div className="row-content"><time dateTime="25.02.2022">{gameData.release_date.date}</time></div>
                         </div>
                         <div className="content-row">
                             <div className="row-title">Developer</div>
-                            <div className="row-content"><NavLink to={'/'}>FromSoftware</NavLink></div>
+                            <div className="row-content"><NavLink to={'/'}>{gameData.developers}</NavLink></div>
                         </div>
                         <div className="content-row">
                             <div className="row-title">Publisher</div>
-                            <div className="row-content"><NavLink to={'/'}>FromSoftware, Bandai Namco Entertainment</NavLink></div>
+                            <div className="row-content"><NavLink to={'/'}>{gameData.publishers}</NavLink></div>
                         </div>
                         <div className="content-row tags-row">
                             <div className="row-title">Popular Tags</div>
 
                             <ul className='game-tags-list'>
-                                <li>
-                                    <a href="" className='tags-link'>
-                                        Souls-like
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="" className='tags-link'>
-                                        RPG
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="" className='tags-link'>
-                                        Dark Fantasy
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="" className='tags-link'>
-                                        Open-world
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="" className='tags-link'>
-                                        <svg>
-                                            <use xlinkHref="images/sprite.svg#add_icon"></use>
-                                        </svg>
-                                    </a>
-                                </li>
+                                {gameData.genres.map((genre, i) => {
+                                    return <li key={i}>
+                                        <NavLink key={genre.id} to={`/genre/${genre.description}`} className='tags-link'>
+                                            {genre.description}
+                                        </NavLink>
+                                    </li>
+                                })}
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div className="grid-columns">
                     <div>
-
-
-                        <div className="block block-row">
+                        {/* <div className="block block-row">
                             <div className="block-top-row">
                                 <hgroup>
-                                    <h3 className="block-title">Elden Ring</h3>
-                                    <p className="block-description">WEEKEND DEAL! Offer ends 19 October</p>
+                                    <h3 className="block-title">{gameData.name}</h3>
+                                    <p className="block-description"></p>
                                 </hgroup>
-                                <div className="svg-container system-required">
-                                    <svg>
-                                        <use xlinkHref="images/sprite.svg#windows_icon"></use>
-                                    </svg>
+                                <div className="platforms-list">
+                                    <div className="svg-container system-required">
+                                        <svg>
+                                            <use xlinkHref="images/sprite.svg#windows_icon"></use>
+                                        </svg>
+                                    </div>
                                 </div>
-                                {data.discount ?
+
+                                {gameData.price_overview.discount_percent ?
                                     <div className="price-block">
                                         <div className="discount-banner">
-                                            {`-${data.discount}%`}
+                                            {`-${gameData.price_overview.discount_percent}%`}
                                         </div>
                                         <div className="discount-prices">
                                             <div className="discount-original-price">
-                                                {`$${data.price}`}
+                                                {`$${gameData.price_overview.initial}`}
                                             </div>
                                             <div className="discount_final_price">
-                                                {`$${finalPrice}`}
+                                                {`$${gameData.price_overview.final}`}
                                             </div>
                                         </div>
                                     </div>
-                                    :
-                                    <div className="original-price">
-                                        {`$${data.price}`}
+                                    : <div className="original-price">
+                                        {`$${gameData.price_overview.initial}`}
                                     </div>
                                 }
 
@@ -290,187 +270,84 @@ export default function GameDetails() {
                                     Add to Cart
                                 </button>
                             </div>
-                        </div>
-                        <div className="block">
-                            <div className="block-top-row">
-                                <hgroup>
-                                    <h3 className="block-title">Elden Ring</h3>
-                                    <p className="block-description">Elden Ring Deluxe Edition</p>
-                                </hgroup>
-                                <div className="svg-container system-required">
-                                    <svg>
-                                        <use xlinkHref="images/sprite.svg#windows_icon"></use>
-                                    </svg>
+                        </div> */}
+                        {gameData.package_groups[0].subs.map((item, index) => {
+                            return (
+                                <div className="block" key={index}>
+                                    <div className="block-top-row">
+                                        <hgroup>
+                                            <h3 className="block-title">{item.option_text}</h3>
+                                            <p className="block-description"></p>
+                                        </hgroup>
+                                        <div className="platforms-list">
+                                            {gameData.platforms.windows && <div className="svg-container system-required">
+                                                <svg>
+                                                    <use xlinkHref="images/sprite.svg#windows_icon"></use>
+                                                </svg>
+                                            </div>}
+                                        </div>
+                                        {item.percent_savings ?
+                                            <div className="price-block">
+                                                <div className="discount-banner">
+                                                    {`-${gameData.price_overview.discount_percent}%`}
+                                                </div>
+                                                <div className="discount-prices">
+                                                    <div className="discount-original-price">
+                                                        {`$${gameData.price_overview.initial}`}
+                                                    </div>
+                                                    <div className="discount_final_price">
+                                                        {`$${gameData.price_overview.final}`}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            : <div className="original-price">
+                                                {`$${item.price_in_cents_with_discount}`}
+                                            </div>
+                                        }
+                                        <button className="addToCard-btn action-btn">
+                                            Add to Cart
+                                        </button>
+                                    </div>
+                                    {/* <div className="included-content-block">
+                                        <p>Includes:</p>
+                                        <ul className="included-content-list">
+                                            <li>
+                                                Elden Ring (full game)
+                                            </li>
+                                            <li>
+                                                Digital Artbook & Original Soundtrack
+                                            </li>
+                                        </ul>
+                                    </div> */}
                                 </div>
-                                {data.discount ?
-                                    <div className="price-block">
-                                        <div className="discount-banner">
-                                            {`-${data.discount}%`}
-                                        </div>
-                                        <div className="discount-prices">
-                                            <div className="discount-original-price">
-                                                {`$${data.price}`}
-                                            </div>
-                                            <div className="discount_final_price">
-                                                {`$${finalPrice}`}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    :
-                                    <div className="original-price">
-                                        {`$${data.price}`}
-                                    </div>
-                                }
+                            )
+                        })}
 
-                                <button className="addToCard-btn action-btn">
-                                    Add to Cart
-                                </button>
-                            </div>
-                            <div className="included-content-block">
-                                <p>Includes:</p>
-                                <ul className="included-content-list">
-                                    <li>
-                                        Elden Ring (full game)
-                                    </li>
-                                    <li>
-                                        Digital Artbook & Original Soundtrack
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="block">
-                            <div className="block-top-row">
-                                <h3 className="block-title-gray">DLCs</h3>
-                                <button className="browse-btn">Browse All DLCs</button>
-                            </div>
 
-                            <ul className="dlc-list">
-                                <li>
-                                    <div className="dlc-title">
-                                        DLC 1
-                                    </div>
-                                    {data.discount ?
-                                        <div className="price-block">
-                                            <div className="discount-banner">
-                                                {`-${data.discount}%`}
-                                            </div>
-                                            <div className="discount-prices">
-                                                <div className="discount-original-price">
-                                                    {`$${data.price}`}
-                                                </div>
-                                                <div className="discount_final_price">
-                                                    {`$${finalPrice}`}
-                                                </div>
-                                            </div>
-                                        </div>
-                                        :
-                                        <div className="original-price">
-                                            {`$${data.price}`}
-                                        </div>
-                                    }
-                                </li>
-                                <li>
-                                    <div className="dlc-title">
-                                        DLC 1
-                                    </div>
-                                    {data.discount ?
-                                        <div className="price-block">
-                                            <div className="discount-banner">
-                                                {`-${data.discount}%`}
-                                            </div>
-                                            <div className="discount-prices">
-                                                <div className="discount-original-price">
-                                                    {`$${data.price}`}
-                                                </div>
-                                                <div className="discount_final_price">
-                                                    {`$${finalPrice}`}
-                                                </div>
-                                            </div>
-                                        </div>
-                                        :
-                                        <div className="original-price">
-                                            {`$${data.price}`}
-                                        </div>
-                                    }
-                                </li>
-                                <li>
-                                    <div className="dlc-title">
-                                        DLC 1
-                                    </div>
-                                    {data.discount ?
-                                        <div className="price-block">
-                                            <div className="discount-banner">
-                                                {`-${data.discount}%`}
-                                            </div>
-                                            <div className="discount-prices">
-                                                <div className="discount-original-price">
-                                                    {`$${data.price}`}
-                                                </div>
-                                                <div className="discount_final_price">
-                                                    {`$${finalPrice}`}
-                                                </div>
-                                            </div>
-                                        </div>
-                                        :
-                                        <div className="original-price">
-                                            {`$${data.price}`}
-                                        </div>
-                                    }
-                                </li>
-                            </ul>
-                            <div className="block-bottom-row">
-                                {data.discount ?
-                                    <div className="price-block">
-                                        <div className="discount-banner">
-                                            {`-${data.discount}%`}
-                                        </div>
-                                        <div className="discount-prices">
-                                            <div className="discount-original-price">
-                                                {`$${data.price}`}
-                                            </div>
-                                            <div className="discount_final_price">
-                                                {`$${finalPrice}`}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    :
-                                    <div className="original-price">
-                                        {`$${data.price}`}
-                                    </div>
-                                }
-
-                                <button className="addToCard-btn action-btn">
-                                    Add to Cart
-                                </button>
-                            </div>
-                        </div>
                         <div className="block">
                             <div className="block-top-row">
                                 <h3 className="block-title-gray">About Elden Ring</h3>
                             </div>
-                            <figure className="game-gif-block">
-                                <img src="images/game_about.gif" alt="" />
-                                <figcaption>THE NEW FANTASY ACTION RPG.Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.</figcaption>
-                            </figure>
-                            <dl className="game-description-list">
-                                <dt>• A Vast World Full of Excitement</dt>
-                                <dd>
-                                    A vast world where open fields with
-                                    a variety of situations and huge dungeons with complex and three-dimensional designs are seamlessly connected. As you explore, the joy of discovering unknown and overwhelming threats await you, leading to a high sense of accomplishment.
-                                </dd>
-                                <dt>• Create your Own Character</dt>
-                                <dd>
-                                    In addition to customizing the appearance of your character, you can freely combine the weapons, armor, and magic that you equip. You can develop your character according to your play style, such as increasing your muscle strength to become a strong warrior, or mastering magic.
-                                </dd>
-                                <dt>• An Epic Drama Born from a Myth</dt>
-                                <dd>
-                                    A multilayered story told in fragments. An epic drama in which the various thoughts of the characters intersect in the Lands Between.
-                                </dd>
-                                <dt>• Unique Online Play that Loosely Connects You to Others</dt>
-                                <dd>
-                                    In addition to multiplayer, where you can directly connect with other players and travel together, the game supports a unique asynchronous online element that allows you to feel the presence of others.
-                                </dd>
-                            </dl>
+                            <div className="game-description-list"
+                                dangerouslySetInnerHTML={{ __html: gameData.detailed_description }}
+                            >
+                            </div>
+                        </div>
+                        <div className="block">
+                            <div className="block-top-row">
+                                <h3 className="block-title-gray">System Requirements</h3>
+                            </div>
+                            <div className="system-requirements-block">
+                                <div
+                                    dangerouslySetInnerHTML={{ __html: gameData.pc_requirements.minimum }}
+                                >
+                                </div>
+                                <div
+                                    dangerouslySetInnerHTML={{ __html: gameData.pc_requirements.recommended }}
+                                >
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                     <div className="right-column">
@@ -479,66 +356,18 @@ export default function GameDetails() {
                                 <div className="block-title-gray">Features</div>
                             </div>
                             <ul className="features-list">
-                                <li>
-                                    <div className="svg-container">
-                                        <svg>
-                                            <use xlinkHref="images/sprite.svg#whish_heart_icon"></use>
-                                        </svg>
-                                    </div>
-                                    <span>
-                                        Single Player
-                                    </span>
-                                </li>
-                                <li>
-                                    <div className="svg-container">
-                                        <svg>
-                                            <use xlinkHref="images/sprite.svg#people"></use>
-                                        </svg>
-                                    </div>
-                                    <span>
-                                        Online Co-Op
-                                    </span>
-                                </li>
-                                <li>
-                                    <div className="svg-container">
-                                        <svg>
-                                            <use xlinkHref="images/sprite.svg#star_icon"></use>
-                                        </svg>
-                                    </div>
-                                    <span>
-                                        Steam Achievements
-                                    </span>
-                                </li>
-                                <li>
-                                    <div className="svg-container">
-                                        <svg>
-                                            <use xlinkHref="images/sprite.svg#controller_icon"></use>
-                                        </svg>
-                                    </div>
-                                    <span>
-                                        Full Controller Support
-                                    </span>
-                                </li>
-                                <li>
-                                    <div className="svg-container">
-                                        <svg>
-                                            <use xlinkHref="images/sprite.svg#whish_heart_icon"></use>
-                                        </svg>
-                                    </div>
-                                    <span>
-                                        Steam Trading Cards
-                                    </span>
-                                </li>
-                                <li>
-                                    <div className="svg-container">
-                                        <svg>
-                                            <use xlinkHref="images/sprite.svg#cloud_icon"></use>
-                                        </svg>
-                                    </div>
-                                    <span>
-                                        Steam Cloud
-                                    </span>
-                                </li>
+                                {gameData.categories.map((category, i) => {
+                                    return <li key={category.id}>
+                                        <div className="svg-container">
+                                            <svg>
+                                                <use xlinkHref={`images/sprite.svg#${category.id}`}></use>
+                                            </svg>
+                                        </div>
+                                        <span>
+                                            {category.description}
+                                        </span>
+                                    </li>
+                                })}
                             </ul>
                         </div>
                         <div className="block">
@@ -661,7 +490,6 @@ export default function GameDetails() {
                                     </ul>
                                 </li>
                             </ul>
-
                         </div>
                     </div>
                 </div>

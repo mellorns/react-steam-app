@@ -1,18 +1,19 @@
 import { useState } from "react"
 import { NavLink } from "react-router"
+import {createSlug} from '../../helpers/helper'
 
 export default function FeaturedSlide() {
     const [lightBoxImg, setLightBoxImg] = useState(null)
 
 
 
-    // const openLigthBox = (src) => setLightBoxImg(src)
-    // const closeLigthBox = () => setLightBoxImg(null)
+    const openLigthBox = (src) => setLightBoxImg(src)
+    const closeLigthBox = () => setLightBoxImg(null)
 
     return (
         <div className='swiper-slide-content'>
             <div className='sale-main-img'>
-                <NavLink to={`/game/${2778580}`}>
+                <NavLink to={`/game/${2778580}/${createSlug('ELDEN RING Shadow of the Erdtree')}`}>
                     <img src="images/slider_1_1.png" alt="" />
                 </NavLink>
             </div>
@@ -83,7 +84,7 @@ export default function FeaturedSlide() {
                 </div>
             </div>
             <div className='sale-game-block-bottom'>
-                <button className='whish-btn'>
+                <button className='wish-btn'>
                     <span>Wishlist</span>
                     <div className="svg-container">
                         <svg>

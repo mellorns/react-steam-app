@@ -54,7 +54,7 @@ export default function SellCardSlide({ data, horizontal }) {
                             {`$${data.price}`}
                         </div>
                     }
-                    <button className='whish-btn'>
+                    <button className='wish-btn'>
                         <div className="svg-container">
                             <svg>
                                 <use xlinkHref="images/sprite.svg#whish_heart_icon"></use>
