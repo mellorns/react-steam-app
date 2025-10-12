@@ -46,7 +46,7 @@
 
     .general-block {
         display: grid;
-        grid-template-columns: auto 1fr;
+        grid-template-columns: minmax(auto, 1000px) 1fr;
         gap: 20px;
 
         .slider-container {
@@ -96,6 +96,10 @@
         justify-content: space-between;
         align-items: center;
         margin-bottom: 25px;
+
+        hgroup {
+            width: 50%;
+        }
     }
 
     .block-bottom-row {

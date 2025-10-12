@@ -1,11 +1,11 @@
 import { useState } from "react"
 import { NavLink } from "react-router"
-import {createSlug} from '../../helpers/helper'
+import { createSlug } from '../../helpers/helper'
 
-export default function FeaturedSlide() {
+export default function FeaturedSlide({ data }) {
     const [lightBoxImg, setLightBoxImg] = useState(null)
 
-
+    const [isInFav, setIsInFav] = useState(false)
 
     const openLigthBox = (src) => setLightBoxImg(src)
     const closeLigthBox = () => setLightBoxImg(null)
@@ -13,34 +13,26 @@ export default function FeaturedSlide() {
     return (
         <div className='swiper-slide-content'>
             <div className='sale-main-img'>
-                <NavLink to={`/game/${2778580}/${createSlug('ELDEN RING Shadow of the Erdtree')}`}>
-                    <img src="images/slider_1_1.png" alt="" />
+                <NavLink to={`/game/${data.steam_appid}/${createSlug('ELDEN RING Shadow of the Erdtree')}`}>
+                    <img src={data.header_image} alt="" />
                 </NavLink>
             </div>
-            {/* <div className="add-info sale-game-block"> */}
             <div className='item-description'>
                 <hgroup>
                     <h3>
-                        Elden Ring
+                        {data.name}
                     </h3>
                     <p>
-                        HE NEW FANTASY ACTION RPG. Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.
+                        {data.short_description}
                     </p>
                 </hgroup>
             </div>
             <ul className='game-images-list'>
-                <li>
-                    <img src="images/slider_1_2.png" onClick={() => openLigthBox("images/slider_1_2.png")} alt="" />
-                </li>
-                <li>
-                    <img src="images/slider_1_3.png" onClick={() => openLigthBox("images/slider_1_3.png")} alt="" />
-                </li>
-                <li>
-                    <img src="images/slider_1_4.png" onClick={() => openLigthBox("images/slider_1_4.png")} alt="" />
-                </li>
-                <li>
-                    <img src="images/slider_1_5.png" onClick={() => openLigthBox("images/slider_1_5.png")} alt="" />
-                </li>
+                {data.screenshots.map(img => {
+                    return <li key={img.id}>
+                        <img src={img.path_thumbnail} onClick={() => openLigthBox(img.path_full)} alt="" />
+                    </li>
+                })}
             </ul>
             {lightBoxImg &&
                 <div className='ligthBox' onClick={closeLigthBox}>
@@ -49,26 +41,13 @@ export default function FeaturedSlide() {
             }
             <div className='tags-block'>
                 <ul className='game-tags-list'>
-                    <li>
-                        <a href="" className='tags-link'>
-                            Souls-like
-                        </a>
-                    </li>
-                    <li>
-                        <a href="" className='tags-link'>
-                            RPG
-                        </a>
-                    </li>
-                    <li>
-                        <a href="" className='tags-link'>
-                            Dark Fantasy
-                        </a>
-                    </li>
-                    <li>
-                        <a href="" className='tags-link'>
-                            Open-world
-                        </a>
-                    </li>
+                    {data.genres.map((genre, i) => {
+                        return <li key={i}>
+                            <a href="" className='tags-link'>
+                                {genre.description}
+                            </a>
+                        </li>
+                    })}
                     <li>
                         <a href="" className='tags-link'>
                             <svg>
@@ -77,29 +56,30 @@ export default function FeaturedSlide() {
                         </a>
                     </li>
                 </ul>
-                <div className="svg-container system-required">
+                {data.platforms.windows && <div className="svg-container system-required">
                     <svg>
                         <use xlinkHref="images/sprite.svg#windows_icon"></use>
                     </svg>
-                </div>
+                </div>}
             </div>
             <div className='sale-game-block-bottom'>
-                <button className='wish-btn'>
+                <button className='wish-btn' onClick={() => setIsInFav(!isInFav)}>
                     <span>Wishlist</span>
                     <div className="svg-container">
                         <svg>
-                            <use xlinkHref="images/sprite.svg#whish_heart_icon"></use>
+                            {isInFav
+                                ? <use xlinkHref="images/sprite.svg#whish_heart_icon_filled"></use>
+                                : <use xlinkHref="images/sprite.svg#whish_heart_icon"></use>
+                            }
                         </svg>
                     </div>
                 </button>
                 <div className='product-price'>
-                    <span>$59.99</span>
+                    <span>{data.price_overview.final_formatted}</span>
                     <button className='buy-product'>Buy Now</button>
                 </div>
 
             </div>
-
-            {/* </div> */}
         </div>
 
     )

@@ -1,29 +1,21 @@
 import MySlider from "../common/MySlider";
-import SellCardSlide from "../slides/SellCardSlide";
 import StreamingSlide from "../slides/StreamingSlide";
+import { useEffect, useState } from "react";
+import NoPageFound from "../common/NoPageFound";
 
 export default function StreamingSection() {
 
 
-    const data = [
-        {
-            img: 'images/sell_item_img_3.png',
-            title: 'American Truck Simulator',
-            viewers: 20,
-        },
-        {
-            img: 'images/sell_item_img_3.png',
-            title: 'American Truck Simulator',
-            viewers: 20,
+    const [data, setData] = useState(null)
 
-        },
-        {
-            img: 'images/sell_item_img_3.png',
-            title: 'American Truck Simulator',
-            viewers: 20,
-        },
-    ]
-
+    useEffect(() => {
+        const loadData = async () => {
+            const resp = await fetch('data/StreamingSection.json')
+            const data = await resp.json()
+            setData(data)
+        }
+        loadData()
+    }, [])
     const config = {
         slidesToShow: 3,
         rows: 1,
@@ -49,6 +41,8 @@ export default function StreamingSection() {
             },
         ]
     }
+    if (!data) return <NoPageFound />
+
     return (
         <section className='streaming-section slider-section'>
             <div className="container">

@@ -1,0 +1,59 @@
+[
+    {
+        "name": "American Truck Simulator",
+        "header_image": "images/sell_item_img_1.png",
+        "steam_appid": 270880,
+        "price_overview": {
+            "currency": "USD",
+            "initial": 19.99,
+            "final": 4.99,
+            "discount_percent": 20,
+            "initial_formatted": "",
+            "final_formatted": "4.99"
+        },
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        },
+        "expiration_date": "Until Oct 31"
+    },
+    {
+        "name": "Batman™: Arkham Knight",
+        "header_image": "images/sell_item_img_2.png",
+        "steam_appid": 208650,
+        "price_overview": {
+            "currency": "USD",
+            "initial": 19.99,
+            "final": 3.99,
+            "discount_percent": 20,
+            "initial_formatted": "",
+            "final_formatted": "3.99"
+        },
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        },
+        "expiration_date": "Until Oct 31"
+    },
+    {
+        "name": "Mortal Kombat 11",
+        "header_image": "images/sell_item_img_3.png",
+        "steam_appid": 976310,
+        "price_overview": {
+            "currency": "USD",
+            "initial": 19.99,
+            "final": 4.99,
+            "discount_percent": 20,
+            "initial_formatted": "",
+            "final_formatted": "4.99"
+        },
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        },
+        "expiration_date": "Until Oct 31"
+    }
+]

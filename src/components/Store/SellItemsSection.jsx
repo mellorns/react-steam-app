@@ -1,60 +1,27 @@
 import MySlider from "../common/MySlider";
 import SellCardSlide from "../slides/SellCardSlide";
+import { useEffect, useState } from "react";
+import NoPageFound from "../common/NoPageFound";
 
 export default function SellItemsSection() {
 
+    const [data, setData] = useState(null)
 
-    const data = [
-        {
-            img: 'images/sell_item_img_3.png',
-            title: 'American Truck Simulator',
-            expDate: 'Until Oct 31',
-            discount: '75',
-            price: '19.99',
-        },
-        {
-            img: 'images/sell_item_img_3.png',
-            title: 'American Truck Simulator',
-            expDate: 'Until Oct 31',
-            discount: '75',
-            price: '19.99',
-        },
-        {
-            img: 'images/sell_item_img_3.png',
-            title: 'American Truck Simulator',
-            expDate: 'Until Oct 31',
-            discount: '75',
-            price: '19.99',
-        },
-        {
-            img: 'images/sell_item_img_3.png',
-            title: 'American Truck Simulator',
-            expDate: 'Until Oct 31',
-            discount: 75,
-            price: 19.99,
-        },
-        {
-            img: 'images/sell_item_img_3.png',
-            title: 'American Truck Simulator',
-            expDate: 'Until Oct 31',
-            discount: 75,
-            price: 19.99,
-        },
-        {
-            img: 'images/sell_item_img_3.png',
-            title: 'American Truck Simulator',
-            expDate: 'Until Oct 31',
-            discount: 75,
-            price: 19.99,
-        },
-    ]
+    useEffect(() => {
+        const loadData = async () => {
+            const resp = await fetch('data/SellItemsSection.json')
+            const data = await resp.json()
+            setData(data)
+        }
+        loadData()
+    }, [])
 
     const config = {
         slidesToShow: 3,
         rows: 1,
         slidesPerRow: 1,
         responsive: [
-             {
+            {
                 breakpoint: 2000,
                 settings: {
                     slidesToShow: 3,
@@ -74,6 +41,8 @@ export default function SellItemsSection() {
             },
         ]
     }
+
+    if (!data) return <NoPageFound />
 
     return (
         <section className='special-offers-section slider-section'>

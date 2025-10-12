@@ -1,47 +1,21 @@
+import { useEffect, useState } from "react";
+import NoPageFound from "../common/NoPageFound";
 import MySlider from "../common/MySlider";
 import SellCardSlide from "../slides/SellCardSlide";
 
+
 export default function SpecialOrderSection() {
+    const [data, setData] = useState(null)
 
+    useEffect(() => {
+        const loadData = async () => {
+            const resp = await fetch('data/SpecialOrderSection.json')
+            const data = await resp.json()
+            setData(data)
+        }
+        loadData()
+    }, [])
 
-    const data = [
-        {
-            img: 'images/special_offer_1_img.png',
-            title: 'The Last of Us: Part 1',
-            expDate: 'Until Nov 2',
-            discount: 20,
-            price: 59.99,
-        },
-        {
-            img: 'images/special_offer_1_img.png',
-            title: 'The Last of Us: Part 1',
-            expDate: 'Until Nov 2',
-            discount: 20,
-            price: 59.99,
-        },
-        {
-            img: 'images/special_offer_1_img.png',
-            title: 'The Last of Us: Part 1',
-            expDate: 'Until Nov 2',
-            discount: 20,
-            price: 59.99,
-        },
-        {
-            img: 'images/special_offer_1_img.png',
-            title: 'The Last of Us: Part 1',
-            expDate: 'Until Nov 2',
-            discount: 20,
-            price: 59.99,
-        },
-        {
-            img: 'images/special_offer_1_img.png',
-            title: 'The Last of Us: Part 1',
-            expDate: 'Until Nov 2',
-            discount: 20,
-            price: 59.99,
-        },
-
-    ]
 
 
     const config = {
@@ -49,7 +23,7 @@ export default function SpecialOrderSection() {
         rows: 1,
         slidesPerRow: 1,
         responsive: [
-             {
+            {
                 breakpoint: 2000,
                 settings: {
                     slidesToShow: 3,
@@ -71,6 +45,7 @@ export default function SpecialOrderSection() {
     }
 
 
+    if (!data) return <NoPageFound />
 
     return (
         <section className='special-offers-section slider-section'>

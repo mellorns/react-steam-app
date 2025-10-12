@@ -1,8 +1,20 @@
+import { useEffect, useState } from "react";
 import MySlider from "../common/MySlider";
 import RecentlyUpdatedSectionSlide from "../slides/RecentlyUpdatedSectionSlide";
+import NoPageFound from "../common/NoPageFound";
 
 export default function RecentlyUpdatedSection() {
 
+    const [data, setData] = useState(null)
+
+    useEffect(() => {
+        const loadData = async () => {
+            const resp = await fetch('data/RecentlyUpdatedSection.json')
+            const data = await resp.json()
+            setData(data)
+        }
+        loadData()
+    }, [])
 
     const config = {
         slidesToShow: 4,
@@ -35,6 +47,9 @@ export default function RecentlyUpdatedSection() {
             },
         ]
     }
+
+    if (!data) return <NoPageFound />
+
     return (
         <section className='recently-updated-section'>
             <div className="container">
@@ -44,11 +59,9 @@ export default function RecentlyUpdatedSection() {
                 </div>
                 <div className='swiper-container'>
                     <MySlider config={config}>
-                        <RecentlyUpdatedSectionSlide />
-                        <RecentlyUpdatedSectionSlide />
-                        <RecentlyUpdatedSectionSlide />
-                        <RecentlyUpdatedSectionSlide />
-                        <RecentlyUpdatedSectionSlide />
+                        {data.map((item, i) => {
+                            return <RecentlyUpdatedSectionSlide data={item} key={i} />
+                        })}
                     </MySlider>
                 </div>
             </div>

@@ -10,6 +10,7 @@ import LibraryLayout from './layout/LibraryLayout'
 import StoreHome from './pages/Store/StoreHome'
 import LibraryHome from './pages/Library/LibraryHome'
 import GameDetails from './pages/Store/GameDetails'
+import NoPageFound from './components/common/NoPageFound'
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
           </Route>
           <Route path='/profile/:steamId' element={<Profile />} />
         </Route>
+        <Route path="*" element={<NoPageFound />} /> {/* 🔥 404 */}
       </Routes>
     </HashRouter>
   )

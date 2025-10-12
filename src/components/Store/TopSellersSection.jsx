@@ -1,52 +1,21 @@
 import MySlider from "../common/MySlider";
 import SellCardSlide from "../slides/SellCardSlide";
+import { useEffect, useState } from "react";
+import NoPageFound from "../common/NoPageFound";
 
 export default function TopSellersSection() {
 
 
+    const [data, setData] = useState(null)
 
-    const data = [
-        {
-            img: 'images/sell_item_img_2.png',
-            title: 'Baldur’s Gate',
-            price: '59.99',
-        },
-        {
-            img: 'images/sell_item_img_2.png',
-            title: 'Baldur’s Gate',
-            price: '59.99',
-        },
-        {
-            img: 'images/sell_item_img_2.png',
-            title: 'Baldur’s Gate',
-            price: '59.99',
-        },
-        {
-            img: 'images/sell_item_img_2.png',
-            title: 'Baldur’s Gate',
-            price: '59.99',
-        },
-        {
-            img: 'images/sell_item_img_2.png',
-            title: 'Baldur’s Gate',
-            price: '59.99',
-        },
-        {
-            img: 'images/sell_item_img_2.png',
-            title: 'Baldur’s Gate',
-            price: '59.99',
-        },
-        {
-            img: 'images/sell_item_img_2.png',
-            title: 'Baldur’s Gate',
-            price: '59.99',
-        },
-        {
-            img: 'images/sell_item_img_2.png',
-            title: 'Baldur’s Gate',
-            price: '59.99',
-        },
-    ]
+    useEffect(() => {
+        const loadData = async () => {
+            const resp = await fetch('data/TopSellersSection.json')
+            const data = await resp.json()
+            setData(data)
+        }
+        loadData()
+    }, [])
 
     const config = {
         rows: 3,
@@ -75,6 +44,8 @@ export default function TopSellersSection() {
             },
         ]
     }
+
+    if (!data) return <NoPageFound />
     return (
         <section className='top-sellers-section slider-section'>
             <div className="container">

@@ -1,66 +1,23 @@
-import { useEffect, useState } from "react";
-import { NavLink, useParams } from "react-router";
+import { useState } from "react";
+import { NavLink, useNavigate, useParams } from "react-router";
 import MySlider from "../../components/common/MySlider";
-
 import '../../assets/styles/store/gameDatailPage.scss'
 import ResponsiveList from "../../components/common/ResponsiveList";
+import { SteamAPI } from "../../hooks/useFetchSteam";
 
 export default function GameDetails() {
     const { appid } = useParams();
-    const [gameData, setGameData] = useState(null);
     const [lightBoxImg, setLightBoxImg] = useState(null)
-
-
-    useEffect(() => {
-        async function loadGame() {
-            const res = await fetch(`http://localhost:3000/api/steam/game/${appid}`);
-            const data = await res.json();
-            setGameData(data);
-        }
-
-        loadGame();
-    }, [appid]);
-
+    const { data, error } = SteamAPI.getGame(appid)
 
     const openLigthBox = (src) => setLightBoxImg(src)
     const closeLigthBox = () => setLightBoxImg(null)
 
 
-    if (!gameData) return <div>Loading...</div>;
+    if (!data) return <div>Loading..</div>
+    if (error) return <div>{error}</div>
 
-    const achievmentsGainerList = [
-        {
-            img: "images/achievements_img_1.png"
-        },
-        {
-            img: "images/achievements_img_1.png"
-        },
-        {
-            img: "images/achievements_img_1.png"
-        },
-        {
-            img: "images/achievements_img_1.png"
-        },
-        {
-            img: "images/achievements_img_1.png"
-        },
-        {
-            img: "images/achievements_img_1.png"
-        },
-        {
-            img: "images/achievements_img_1.png"
-        },
-        {
-            img: "images/achievements_img_1.png"
-        },
-        {
-            img: "images/achievements_img_1.png"
-        },
-        {
-            img: "images/achievements_img_1.png"
-        },
 
-    ]
     const config = {
         slidesToShow: 3,
         rows: 1,
@@ -86,7 +43,7 @@ export default function GameDetails() {
             },
         ]
     }
-    const backgroundUrl = gameData?.background || gameData?.background_raw;
+    const backgroundUrl = data?.background || data?.background_raw;
 
     return (
         <div className="game-detail-page" style={{
@@ -94,7 +51,7 @@ export default function GameDetails() {
         }} >
             <div className="container">
                 <div className="detail-page-header">
-                    <h2>{gameData.name}</h2>
+                    <h2>{data.name}</h2>
                     <div className="action-container">
                         <div>
                             <button className="action-btn ignore-btn">Ignore</button>
@@ -120,21 +77,23 @@ export default function GameDetails() {
                 </div>
                 <div className="block general-block">
                     <div className="slider-block">
-                        <div className="main-img-container">
+                        {data.movies.length && <div className="main-img-container">
                             <video
                                 controls
-                                poster={gameData.movies[0].thumbnail}
+                                poster={data.movies[0].thumbnail}
                                 className="trailer-video"
                                 autoPlay
+                                muted
                             >
-                                <source src={gameData.movies[0].mp4?.max || movie.mp4?.["480"]} type="video/mp4" />
-                                <source src={gameData.movies[0].webm?.max || movie.webm?.["480"]} type="video/webm" />
+                                <source src={data.movies[0].mp4?.max || movie.mp4?.["480"]} type="video/mp4" />
+                                <source src={data.movies[0].webm?.max || movie.webm?.["480"]} type="video/webm" />
                                 Ваш браузер не підтримує відтворення відео.
                             </video>
                         </div>
+                        }
                         <div className="slider-wrapper">
                             <MySlider config={config}>
-                                {gameData.screenshots.map((item, i) => {
+                                {data.screenshots.map((item, i) => {
                                     return <img src={item.path_thumbnail} onClick={() => openLigthBox(item.path_full)} />
                                 })}
                             </MySlider>
@@ -148,10 +107,10 @@ export default function GameDetails() {
                     </div>
                     <div className="content-block">
                         <div className="content-block-img">
-                            <img src={gameData.header_image} alt="" />
+                            <img src={data.header_image} alt="" />
                         </div>
                         <p className="about-game">
-                            {gameData.short_description}
+                            {data.short_description}
                         </p>
                         <div className="reviews-block">
                             <span>Reviews</span>
@@ -206,21 +165,21 @@ export default function GameDetails() {
                         </div>
                         <div className="content-row">
                             <div className="row-title">Release Date</div>
-                            <div className="row-content"><time dateTime="25.02.2022">{gameData.release_date.date}</time></div>
+                            <div className="row-content"><time dateTime="25.02.2022">{data.release_date.date}</time></div>
                         </div>
                         <div className="content-row">
                             <div className="row-title">Developer</div>
-                            <div className="row-content"><NavLink to={'/'}>{gameData.developers}</NavLink></div>
+                            <div className="row-content"><NavLink to={'/'}>{data.developers}</NavLink></div>
                         </div>
                         <div className="content-row">
                             <div className="row-title">Publisher</div>
-                            <div className="row-content"><NavLink to={'/'}>{gameData.publishers}</NavLink></div>
+                            <div className="row-content"><NavLink to={'/'}>{data.publishers}</NavLink></div>
                         </div>
                         <div className="content-row tags-row">
                             <div className="row-title">Popular Tags</div>
 
                             <ul className='game-tags-list'>
-                                {gameData.genres.map((genre, i) => {
+                                {data.genres.map((genre, i) => {
                                     return <li key={i}>
                                         <NavLink key={genre.id} to={`/genre/${genre.description}`} className='tags-link'>
                                             {genre.description}
@@ -233,45 +192,7 @@ export default function GameDetails() {
                 </div>
                 <div className="grid-columns">
                     <div>
-                        {/* <div className="block block-row">
-                            <div className="block-top-row">
-                                <hgroup>
-                                    <h3 className="block-title">{gameData.name}</h3>
-                                    <p className="block-description"></p>
-                                </hgroup>
-                                <div className="platforms-list">
-                                    <div className="svg-container system-required">
-                                        <svg>
-                                            <use xlinkHref="images/sprite.svg#windows_icon"></use>
-                                        </svg>
-                                    </div>
-                                </div>
-
-                                {gameData.price_overview.discount_percent ?
-                                    <div className="price-block">
-                                        <div className="discount-banner">
-                                            {`-${gameData.price_overview.discount_percent}%`}
-                                        </div>
-                                        <div className="discount-prices">
-                                            <div className="discount-original-price">
-                                                {`$${gameData.price_overview.initial}`}
-                                            </div>
-                                            <div className="discount_final_price">
-                                                {`$${gameData.price_overview.final}`}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    : <div className="original-price">
-                                        {`$${gameData.price_overview.initial}`}
-                                    </div>
-                                }
-
-                                <button className="addToCard-btn action-btn">
-                                    Add to Cart
-                                </button>
-                            </div>
-                        </div> */}
-                        {gameData.package_groups[0].subs.map((item, index) => {
+                        {data.package_groups[0].subs.map((item, index) => {
                             return (
                                 <div className="block" key={index}>
                                     <div className="block-top-row">
@@ -280,7 +201,7 @@ export default function GameDetails() {
                                             <p className="block-description"></p>
                                         </hgroup>
                                         <div className="platforms-list">
-                                            {gameData.platforms.windows && <div className="svg-container system-required">
+                                            {data.platforms.windows && <div className="svg-container system-required">
                                                 <svg>
                                                     <use xlinkHref="images/sprite.svg#windows_icon"></use>
                                                 </svg>
@@ -289,14 +210,14 @@ export default function GameDetails() {
                                         {item.percent_savings ?
                                             <div className="price-block">
                                                 <div className="discount-banner">
-                                                    {`-${gameData.price_overview.discount_percent}%`}
+                                                    {`-${data.price_overview.discount_percent}%`}
                                                 </div>
                                                 <div className="discount-prices">
                                                     <div className="discount-original-price">
-                                                        {`$${gameData.price_overview.initial}`}
+                                                        {`$${data.price_overview.initial}`}
                                                     </div>
                                                     <div className="discount_final_price">
-                                                        {`$${gameData.price_overview.final}`}
+                                                        {`$${data.price_overview.final}`}
                                                     </div>
                                                 </div>
                                             </div>
@@ -329,7 +250,7 @@ export default function GameDetails() {
                                 <h3 className="block-title-gray">About Elden Ring</h3>
                             </div>
                             <div className="game-description-list"
-                                dangerouslySetInnerHTML={{ __html: gameData.detailed_description }}
+                                dangerouslySetInnerHTML={{ __html: data.detailed_description }}
                             >
                             </div>
                         </div>
@@ -339,11 +260,11 @@ export default function GameDetails() {
                             </div>
                             <div className="system-requirements-block">
                                 <div
-                                    dangerouslySetInnerHTML={{ __html: gameData.pc_requirements.minimum }}
+                                    dangerouslySetInnerHTML={{ __html: data.pc_requirements.minimum }}
                                 >
                                 </div>
                                 <div
-                                    dangerouslySetInnerHTML={{ __html: gameData.pc_requirements.recommended }}
+                                    dangerouslySetInnerHTML={{ __html: data.pc_requirements.recommended }}
                                 >
                                 </div>
 
@@ -356,7 +277,7 @@ export default function GameDetails() {
                                 <div className="block-title-gray">Features</div>
                             </div>
                             <ul className="features-list">
-                                {gameData.categories.map((category, i) => {
+                                {data.categories.map((category, i) => {
                                     return <li key={category.id}>
                                         <div className="svg-container">
                                             <svg>
@@ -424,13 +345,13 @@ export default function GameDetails() {
                             <div className="block-top-row">
                                 <div className="block-title-gray">Achievements</div>
                             </div>
-                            <ResponsiveList items={achievmentsGainerList} />
+                            <ResponsiveList achievements={data.achievements} />
                         </div>
                         <div className="block">
                             <div className="block-top-row">
                                 <div className="block-title-gray">Point Shop Items</div>
                             </div>
-                            <ResponsiveList items={achievmentsGainerList} />
+                            <ResponsiveList achievements={data.achievements} />
                         </div>
                         <div className="block sidebar-navigation">
                             <div className="block-top-row">

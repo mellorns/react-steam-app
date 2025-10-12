@@ -46,8 +46,8 @@ export default function MySlider({ children, config }) {
     settings.responsive.forEach((brkp) => {
         if (brkp.breakpoint >= window.innerWidth) {
             settings.slidesToShow = brkp.settings.slidesToShow || settings.slidesToShow
-            settings.rows = brkp.settings.rows ||  settings.rows 
-            settings.slidesPerRow = brkp.settings.slidesPerRow ||  settings.slidesPerRow 
+            settings.rows = brkp.settings.rows || settings.rows
+            settings.slidesPerRow = brkp.settings.slidesPerRow || settings.slidesPerRow
         }
     })
 

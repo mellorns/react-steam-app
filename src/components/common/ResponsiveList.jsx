@@ -2,9 +2,11 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 
-export default function ResponsiveList({ items }) {
+export default function ResponsiveList({ achievements }) {
+    console.log(achievements);
+    
     const containerRef = useRef(null);
-    const [visibleCount, setVisibleCount] = useState(items.length);
+    const [visibleCount, setVisibleCount] = useState(achievements.highlighted.length);
 
     useLayoutEffect(() => {
         const container = containerRef.current;
@@ -25,18 +27,12 @@ export default function ResponsiveList({ items }) {
                     count++;
                 } else break;
             }
-
-            // залишаємо місце для "+N"
-            if (count < items.length) count = Math.max(0, count - 1);
+            if (count < achievements.highlighted.length) count = Math.max(0, count - 1);
             setVisibleCount(count);
         };
 
         updateVisible();
-
-        // 🔥 реагує як на зменшення, так і на збільшення
         window.addEventListener("resize", updateVisible);
-
-        // ✅ спостереження за змінами самого контейнера
         const observer = new ResizeObserver(updateVisible);
         observer.observe(container);
 
@@ -44,19 +40,19 @@ export default function ResponsiveList({ items }) {
             observer.disconnect();
             window.removeEventListener("resize", updateVisible);
         };
-    }, [items]);
+    }, [achievements]);
 
-    const hiddenCount = items.length - visibleCount;
+    const hiddenCount = achievements.length - visibleCount;
 
     return (
         <ul
             ref={containerRef}
             className="achievements-list"
         >
-            {items.slice(0, visibleCount).map((item, i) => (
+            {achievements.highlighted.slice(0, visibleCount).map((item, i) => (
                 <li key={i}>
                     <div className="achievements-img-container">
-                        <img src={item.img} alt="" />
+                        <img src={item.path} alt={item.name} />
                     </div>
                 </li>
             ))}

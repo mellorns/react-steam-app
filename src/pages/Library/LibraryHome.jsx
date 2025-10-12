@@ -3,72 +3,44 @@ import LibraryHeroSection from "../../components/library/LibraryHeroSection";
 import ResponsiveList from "../../components/common/ResponsiveList";
 
 
-const achievmentsGainerList = [
-    {
-        img: "images/achievements_img_1.png"
-    },
-    {
-        img: "images/achievements_img_1.png"
-    },
-    {
-        img: "images/achievements_img_1.png"
-    },
-    {
-        img: "images/achievements_img_1.png"
-    },
-    {
-        img: "images/achievements_img_1.png"
-    },
-    {
-        img: "images/achievements_img_1.png"
-    },
-    {
-        img: "images/achievements_img_1.png"
-    },
-    {
-        img: "images/achievements_img_1.png"
-    },
-    {
-        img: "images/achievements_img_1.png"
-    },
-    {
-        img: "images/achievements_img_1.png"
-    },
+const achievmentsGainerList = {
+    highlighted: [
+        {
+            path: "images/achievements_img_1.png"
+        },
+        {
+            path: "images/achievements_img_1.png"
+        },
+        {
+            path: "images/achievements_img_1.png"
+        },
+        {
+            path: "images/achievements_img_1.png"
+        },
+        {
+            path: "images/achievements_img_1.png"
+        },
+        {
+            path: "images/achievements_img_1.png"
+        },
+        {
+            path: "images/achievements_img_1.png"
+        },
+        {
+            path: "images/achievements_img_1.png"
+        },
+        {
+            path: "images/achievements_img_1.png"
+        },
+        {
+            path: "images/achievements_img_1.png"
+        },
+    ],
+    length: 12
+}
 
-]
-const achievmentsLockedList = [
-    {
-        img: "images/achievements_img_1.png"
-    },
-    {
-        img: "images/achievements_img_1.png"
-    },
-    {
-        img: "images/achievements_img_1.png"
-    },
-    {
-        img: "images/achievements_img_1.png"
-    },
-    {
-        img: "images/achievements_img_1.png"
-    },
-    {
-        img: "images/achievements_img_1.png"
-    },
-    {
-        img: "images/achievements_img_1.png"
-    },
-    {
-        img: "images/achievements_img_1.png"
-    },
-    {
-        img: "images/achievements_img_1.png"
-    },
-    {
-        img: "images/achievements_img_1.png"
-    },
 
-]
+
 
 
 
@@ -132,11 +104,11 @@ export default function LibraryHome() {
                     <section className="achievements-section">
                         <div>
                             <h3 className="section-header">Achievements</h3>
-                            <ResponsiveList items={achievmentsGainerList} />
+                            <ResponsiveList achievements={achievmentsGainerList} />
                         </div>
                         <div>
                             <h3 className="achievements-list-header">Locked Achievements</h3>
-                            <ResponsiveList items={achievmentsLockedList} />
+                            <ResponsiveList achievements={achievmentsGainerList} />
 
                         </div>
                     </section>

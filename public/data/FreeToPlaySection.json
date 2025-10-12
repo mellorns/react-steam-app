@@ -1,0 +1,68 @@
+[
+    {
+        "name": "Destiny 2",
+        "header_image": "images/freeToPlay_img_1.png",
+        "steam_appid": 1085660,
+        "isFree": true,
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        }
+    },
+    {
+        "name": "Halo Infinite",
+        "header_image": "images/freeToPlay_img_2.png",
+        "steam_appid": 1240440,
+        "isFree": true,
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        }
+    },
+    {
+        "name": "Team Fortress 2",
+        "header_image": "images/freeToPlay_img_3.png",
+        "steam_appid": 440,
+        "isFree": true,
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        }
+    },
+    {
+        "name": "Destiny 2",
+        "header_image": "images/freeToPlay_img_1.png",
+        "steam_appid": 1240440,
+        "isFree": true,
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        }
+    },
+    {
+        "name": "Halo Infinite",
+        "header_image": "images/freeToPlay_img_2.png",
+        "steam_appid": 1888930,
+        "isFree": true,
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        }
+    },
+    {
+        "name": "Team Fortress 2",
+        "header_image": "images/freeToPlay_img_3.png",
+        "steam_appid": 440,
+        "isFree": true,
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        }
+    }
+]

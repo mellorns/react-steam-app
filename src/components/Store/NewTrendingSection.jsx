@@ -1,34 +1,28 @@
+import { useEffect, useState } from "react";
 import MySlider from "../common/MySlider";
 import SellCardSlide from "../slides/SellCardSlide";
+import NoPageFound from "../common/NoPageFound";
 
 export default function NewTrendingSection() {
 
 
+    const [data, setData] = useState(null)
 
-    const data = [
-        {
-            img: 'images/sell_item_img_1.png',
-            title: 'Cities Skylines II',
-            price: '49.99',
-        },
-        {
-            img: 'images/sell_item_img_1.png',
-            title: 'Cities Skylines II',
-            price: '49.99',
-        },
-        {
-            img: 'images/sell_item_img_1.png',
-            title: 'Cities Skylines II',
-            price: '49.99',
-        },
-    ]
+    useEffect(() => {
+        const loadData = async () => {
+            const resp = await fetch('data/NewTrendingSection.json')
+            const data = await resp.json()
+            setData(data)
+        }
+        loadData()
+    }, [])
 
     const config = {
         slidesToShow: 3,
         rows: 1,
         slidesPerRow: 1,
-         responsive: [
-             {
+        responsive: [
+            {
                 breakpoint: 2000,
                 settings: {
                     slidesToShow: 3,
@@ -48,6 +42,9 @@ export default function NewTrendingSection() {
             },
         ]
     }
+
+    if (!data) return <NoPageFound />
+
     return (
         <section className='new-trading-section slider-section'>
             <div className="container">

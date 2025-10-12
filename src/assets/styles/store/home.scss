@@ -216,27 +216,6 @@ section {
 
 }
 
-/* ligthBox styles */
-
-.ligthBox {
-    position: fixed;
-    inset: 0;
-    z-index: 101;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-
-    img {
-        max-width: 50%;
-        max-height: 50%;
-        border-radius: 8px;
-    }
-
-}
-
-
 /* FEATURED section styles */
 
 
@@ -330,6 +309,7 @@ section {
         gap: 13px;
         align-items: center;
         align-self: flex-end;
+        color: common.$text-main;
     }
 
     .buy-product {
@@ -530,6 +510,8 @@ section {
     }
 
     .swiper-slide-content.horizontal {
+        display: grid;
+        grid-template-columns: 230px 1fr;
         flex-direction: row;
         justify-content: start;
 
@@ -543,6 +525,13 @@ section {
             margin-bottom: 10px;
         }
 
+        .price-block {
+            margin-left: auto;
+            margin-right: 20px;
+        }
+
+        .sell-item-img {}
+
         .sell-item-info {
             display: flex;
             flex-direction: column;
@@ -550,7 +539,7 @@ section {
         }
 
         @media screen and (max-width:700px) {
-            flex-direction: column;
+            grid-template-columns: 1fr;
         }
 
     }
@@ -559,7 +548,7 @@ section {
     .slide-title {
         font-size: 22px;
         font-weight: 700;
-        line-height: 45px;
+         margin-bottom: 10px;
 
         a:hover {
             color: $text-dim;
@@ -776,6 +765,7 @@ section {
         flex-direction: column;
         justify-content: space-between;
         gap: 13px;
+        height: 340px;
     }
 
     .slide-item-link {
@@ -784,9 +774,7 @@ section {
         }
     }
 
-    hgroup {
-        margin-bottom: 13px;
-    }
+
 
     .slide-item-title {
         font-size: 18px;
@@ -812,7 +800,8 @@ section {
         gap: 13px;
         justify-content: space-between;
 
-        button {
+        button,
+        a {
             padding: 12px 17px;
             border-radius: 3px;
         }
@@ -827,6 +816,7 @@ section {
     }
 
     .viewUpdates-btn {
+
         background-color: $background-highligth;
         border: 1px solid $background-highligth;
 

@@ -11,5 +11,5 @@ function roundAfterPoint(num, decimal) {
 
 
 export function createSlug(str) {
-    return str.split(' ').join('_')
+    return str ? str.replaceAll(' ', '_') : ''
 }

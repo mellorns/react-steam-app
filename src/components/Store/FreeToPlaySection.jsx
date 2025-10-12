@@ -1,14 +1,28 @@
+import { useEffect, useState } from "react";
 import MySlider from "../common/MySlider";
 import FreeToPlaySlide from "../slides/FreeToPlaySlide";
+import NoPageFound from "../common/NoPageFound";
 
 export default function FreeToPlaySection() {
+
+    const [data, setData] = useState(null)
+
+    useEffect(() => {
+        const loadData = async () => {
+            const resp = await fetch('data/FreeToPlaySection.json')
+            const data = await resp.json()
+            setData(data)
+        }
+        loadData()
+    }, [])
+
 
     const config = {
         slidesToShow: 3,
         rows: 1,
         slidesPerRow: 1,
         responsive: [
-             {
+            {
                 breakpoint: 2000,
                 settings: {
                     slidesToShow: 3,
@@ -29,6 +43,9 @@ export default function FreeToPlaySection() {
         ]
     }
 
+    if (!data) return <NoPageFound />
+
+
     return (
         <section className='slider-section free-toPlay-section'>
             <div className="container">
@@ -38,10 +55,9 @@ export default function FreeToPlaySection() {
                 </div>
                 <div className='swiper-container'>
                     <MySlider config={config}>
-                        <FreeToPlaySlide />
-                        <FreeToPlaySlide />
-                        <FreeToPlaySlide />
-                        <FreeToPlaySlide />
+                        {data.map((item, i) => {
+                            return <FreeToPlaySlide data={item} key={i} />
+                        })}
                     </MySlider>
                 </div>
             </div>

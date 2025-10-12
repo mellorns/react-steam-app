@@ -1,0 +1,110 @@
+[
+    {
+        "name": "Cities Skylines II",
+        "header_image": "images/trading_img_1.png",
+        "steam_appid": 949230,
+        "price_overview": {
+            "currency": "USD",
+            "initial": 49.99,
+            "final": 44.99,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "47.99"
+        },
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        }
+    },
+    {
+        "name": "Wildmender",
+        "header_image": "images/trading_img_2.png",
+        "steam_appid": 1599330,
+        "price_overview": {
+            "currency": "USD",
+            "initial": 24.99,
+            "final": 24.99,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "24.99"
+        },
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        }
+    },
+    {
+        "name": "The Bloodline",
+        "header_image": "images/trading_img_3.png",
+        "steam_appid": 1159290,
+        "price_overview": {
+            "currency": "USD",
+            "initial": 19.99,
+            "final": 19.99,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "19.99"
+        },
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        }
+    },
+    {
+        "name": "Cities Skylines II",
+        "header_image": "images/trading_img_1.png",
+        "steam_appid": 949230,
+        "price_overview": {
+            "currency": "USD",
+            "initial": 49.99,
+            "final": 44.99,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "47.99"
+        },
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        }
+    },
+    {
+        "name": "Wildmender",
+        "header_image": "images/trading_img_2.png",
+        "steam_appid": 1599330,
+        "price_overview": {
+            "currency": "USD",
+            "initial": 24.99,
+            "final": 24.99,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "24.99"
+        },
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        }
+    },
+    {
+        "name": "The Bloodline",
+        "header_image": "images/trading_img_3.png",
+        "steam_appid": 1159290,
+        "price_overview": {
+            "currency": "USD",
+            "initial": 19.99,
+            "final": 19.99,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "19.99"
+        },
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        }
+    }
+]
