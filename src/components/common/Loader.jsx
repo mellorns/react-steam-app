@@ -1,4 +1,3 @@
-// components/common/Loader.jsx
 import { motion } from "framer-motion";
 import '../../assets/styles/loader.scss'
 

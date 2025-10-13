@@ -7,7 +7,8 @@ const PORT = 3000;
 
 app.use(cors());
 
-const STEAM_API_KEY = "3EFF9DA3161F8AD07798A06ECFC71424";
+  const STEAM_API_KEY = import.meta.env.VITE_MY_STEAM_KEY;
+
 
 // Профіль користувача
 app.get("/api/steam/profile/:steamId", async (req, res) => {
@@ -62,7 +63,7 @@ app.get("/api/steam/game/:appid", async (req, res) => {
     if (!result) return res.status(404).json({ error: "Game not found" });
     res.json(result);
   } catch (err) {
-    console.error("❌ Error fetching game:", err);
+    console.error(" Error fetching game:", err);
     res.status(500).json({ error: "Failed to fetch game details" });
   }
 });
