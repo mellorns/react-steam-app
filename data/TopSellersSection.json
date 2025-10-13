@@ -1,0 +1,164 @@
+[
+    {
+        "name": "Baldur’s Gate",
+        "header_image": "images/top_sellers_img_1.png",
+        "steam_appid": 228280,
+        "price_overview": {
+            "currency": "USD",
+            "initial": 59.99,
+            "final": 59.99,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "59.99"
+        },
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        }
+    },
+    {
+        "name": "Rust",
+        "header_image": "images/top_sellers_img_2.png",
+        "steam_appid": 252490,
+        "price_overview": {
+            "currency": "USD",
+            "initial": 39.99,
+            "final": 39.99,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "39.99"
+        },
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        }
+    },
+    {
+        "name": "Call of Duty®",
+        "header_image": "images/top_sellers_img_3.png",
+        "steam_appid": 10180,
+        "price_overview": {
+            "currency": "USD",
+            "initial": 69.99,
+            "final": 69.99,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "69.99"
+        },
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        }
+    },
+    {
+        "name": "Fallout 76",
+        "header_image": "images/top_sellers_img_4.png",
+        "steam_appid": 377160,
+        "price_overview": {
+            "currency": "USD",
+            "initial": 39.99,
+            "final": 7.99,
+            "discount_percent": 80,
+            "initial_formatted": "",
+            "final_formatted": "7.99"
+        },
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        }
+    },
+    {
+        "name": "Metal Gear & Metal Gear 2: Solid Snake",
+        "header_image": "images/top_sellers_img_5.png",
+        "steam_appid": 287700,
+        "price_overview": {
+            "currency": "USD",
+            "initial": 19.99,
+            "final": 19.99,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "19.99"
+        },
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        }
+    },
+    {
+        "name": "Red Dead Redemption 2",
+        "header_image": "images/top_sellers_img_6.png",
+        "steam_appid": 2668510,
+        "price_overview": {
+            "currency": "USD",
+            "initial": 59.99,
+            "final": 23.99,
+            "discount_percent": 60,
+            "initial_formatted": "",
+            "final_formatted": "23.99"
+        },
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        }
+    },
+    {
+        "name": "Baldur’s Gate",
+        "header_image": "images/top_sellers_img_1.png",
+        "steam_appid": 228280,
+        "price_overview": {
+            "currency": "USD",
+            "initial": 59.99,
+            "final": 59.99,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "59.99"
+        },
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        }
+    },
+    {
+        "name": "Rust",
+        "header_image": "images/top_sellers_img_2.png",
+        "steam_appid": 252490,
+        "price_overview": {
+            "currency": "USD",
+            "initial": 39.99,
+            "final": 39.99,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "39.99"
+        },
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        }
+    },
+    {
+        "name": "Call of Duty®",
+        "header_image": "images/top_sellers_img_3.png",
+        "steam_appid": 10180,
+        "price_overview": {
+            "currency": "USD",
+            "initial": 69.99,
+            "final": 69.99,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "69.99"
+        },
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        }
+    }
+]

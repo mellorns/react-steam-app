@@ -1,0 +1,27 @@
+[
+    {
+        "name": "American Truck Simulator",
+        "header_image": "images/streamer_img_1.png",
+        "steam_appid": 270880,
+        "live_viewers": 20
+    },
+    {
+        "name": "American Truck Simulator",
+        "header_image": "images/streamer_img_2.png",
+        "steam_appid": 270880,
+        "live_viewers": 20
+    },
+    {
+        "name": "American Truck Simulator",
+        "header_image": "images/streamer_img_3.png",
+        "steam_appid": 270880,
+        "live_viewers": 20
+    },
+    {
+        "name": "American Truck Simulator",
+        "header_image": "images/streamer_img_3.png",
+        "steam_appid": 270880,
+        "live_viewers": 20
+    }
+    
+]

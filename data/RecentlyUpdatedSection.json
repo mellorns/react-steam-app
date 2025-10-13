@@ -1,0 +1,74 @@
+[
+    {
+        "name": "Cyberpunk 2077",
+        "header_image": "images/updates_img_1.png",
+        "short_description": "The free Update 2.0 brings brand new ways to play Cyberpunk 2077...",
+        "steam_appid": 1091500,
+        "isFree": true,
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        }
+    },
+    {
+        "name": "Starfield",
+        "header_image": "images/updates_img_2.png",
+         "short_description": "A new update has been released for Starfield on all platforms...",
+        "steam_appid": 3565720,
+        "isFree": true,
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        }
+    },
+    {
+        "name": "The Elder Scrolls® Online",
+        "header_image": "images/updates_img_3.png",
+         "short_description": "Conquer Tamriel’s Fears and Earn Special Rewards during the Witches Festival Event...",
+        "steam_appid": 611670,
+        "isFree": true,
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        }
+    },
+    {
+        "name": "Cyberpunk 2077",
+        "header_image": "images/updates_img_1.png",
+        "short_description": "The free Update 2.0 brings brand new ways to play Cyberpunk 2077...",
+        "steam_appid": 1091500,
+        "isFree": true,
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        }
+    },
+    {
+        "name": "Starfield",
+        "header_image": "images/updates_img_2.png",
+         "short_description": "A new update has been released for Starfield on all platforms...",
+        "steam_appid": 3565720,
+        "isFree": true,
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        }
+    },
+    {
+        "name": "The Elder Scrolls® Online",
+        "header_image": "images/updates_img_3.png",
+         "short_description": "Conquer Tamriel’s Fears and Earn Special Rewards during the Witches Festival Event...",
+        "steam_appid": 611670,
+        "isFree": true,
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        }
+    }
+]

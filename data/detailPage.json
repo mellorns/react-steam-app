@@ -1,0 +1,331 @@
+{
+    "type": "dlc",
+    "name": "ELDEN RING Shadow of the Erdtree",
+    "steam_appid": 2778580,
+    "required_age": "16",
+    "is_free": false,
+    "controller_support": "full",
+    "detailed_description": "ELDEN RING — нашумевший ролевой боевик в мрачном фэнтезийном мире, удостоенный сотни наград, включая The Game Awards в номинации «Игра года» и Golden Joystick Awards в номинации «Лучшая игра года». Игроки отправляются в долгое путешествие и исследуют полные опасности земли в своём темпе.<br><br>Действие дополнения Shadow of the Erdtree разворачивается в землях Теней, где вас ждут новые тайны.<br><br>Открывайте неизведанные места, сражайтесь с грозными противниками и наслаждайтесь вкусом победы. Следите за увлекательными взаимоотношениями героев. Погрузитесь в историю, полную драм и интриг, которая никого не оставит равнодушным.<br><br><i>*Для материалов Shadow of the Erdtree требуется основная игра.<br>*Доступны и другие варианты изданий. Внимание: издания содержат повторяющиеся материалы.</i>",
+    "about_the_game": "ELDEN RING — нашумевший ролевой боевик в мрачном фэнтезийном мире, удостоенный сотни наград, включая The Game Awards в номинации «Игра года» и Golden Joystick Awards в номинации «Лучшая игра года». Игроки отправляются в долгое путешествие и исследуют полные опасности земли в своём темпе.<br><br>Действие дополнения Shadow of the Erdtree разворачивается в землях Теней, где вас ждут новые тайны.<br><br>Открывайте неизведанные места, сражайтесь с грозными противниками и наслаждайтесь вкусом победы. Следите за увлекательными взаимоотношениями героев. Погрузитесь в историю, полную драм и интриг, которая никого не оставит равнодушным.<br><br><i>*Для материалов Shadow of the Erdtree требуется основная игра.<br>*Доступны и другие варианты изданий. Внимание: издания содержат повторяющиеся материалы.</i>",
+    "short_description": "Действие дополнения ELDEN RING Shadow of the Erdtree разворачивается в землях Теней, где вас ждут древние тайны, жуткие подземелья, новые враги, оружие и доспехи.",
+    "fullgame": {
+        "appid": "1245620",
+        "name": "ELDEN RING"
+    },
+    "supported_languages": "английский<strong>*</strong>, французский, итальянский, немецкий, испанский — Испания, японский, корейский, польский, португальский — Бразилия, русский, китайский (упр.), испанский — Латинская Америка, тайский, китайский (трад.)<br><strong>*</strong>озвучивание доступно на этих языках",
+    "reviews": "“hard to imagine a better DLC than this”<br>10/10 – IGN<br><br>“an unmissable tour de force that is every bit as brilliant as the original game”<br>10/10 – GameSpot<br><br>“Every frame could be a painting.”<br>10/10 – Sports Illustrated<br>",
+    "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2778580/header.jpg?t=1744748042",
+    "capsule_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2778580/capsule_231x87.jpg?t=1744748042",
+    "capsule_imagev5": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2778580/capsule_184x69.jpg?t=1744748042",
+    "website": null,
+    "pc_requirements": {
+        "minimum": "<strong>Минимальные:</strong><br><ul class=\"bb_ul\"><li>64-разрядные процессор и операционная система<br></li><li><strong>ОС:</strong> Windows 10<br></li><li><strong>Процессор:</strong> INTEL CORE I5-8400 or AMD RYZEN 3 3300X<br></li><li><strong>Оперативная память:</strong> 12 GB ОЗУ<br></li><li><strong>Видеокарта:</strong> NVIDIA GEFORCE GTX 1060 3 GB or AMD RADEON RX 580 4 GB<br></li><li><strong>DirectX:</strong> версии 12<br></li><li><strong>Место на диске:</strong> 60 GB<br></li><li><strong>Звуковая карта:</strong> Windows Compatible Audio Device</li></ul>",
+        "recommended": "<strong>Рекомендованные:</strong><br><ul class=\"bb_ul\"><li>64-разрядные процессор и операционная система<br></li><li><strong>ОС:</strong> Windows 10/11<br></li><li><strong>Процессор:</strong> INTEL CORE I7-8700K or AMD RYZEN 5 3600X<br></li><li><strong>Оперативная память:</strong> 16 GB ОЗУ<br></li><li><strong>Видеокарта:</strong> NVIDIA GEFORCE GTX 1070 8 GB or AMD RADEON RX VEGA 56 8 GB<br></li><li><strong>DirectX:</strong> версии 12<br></li><li><strong>Место на диске:</strong> 60 GB<br></li><li><strong>Звуковая карта:</strong> Windows Compatible Audio Device</li></ul>"
+    },
+    "mac_requirements": {
+        "minimum": "<strong>Минимальные:</strong><br><ul class=\"bb_ul\"></ul>",
+        "recommended": "<strong>Рекомендованные:</strong><br><ul class=\"bb_ul\"></ul>"
+    },
+    "linux_requirements": {
+        "minimum": "<strong>Минимальные:</strong><br><ul class=\"bb_ul\"></ul>",
+        "recommended": "<strong>Рекомендованные:</strong><br><ul class=\"bb_ul\"></ul>"
+    },
+    "legal_notice": "©Bandai Namco Entertainment Inc. / ©2024 FromSoftware, Inc.",
+    "developers": [
+        "FromSoftware, Inc."
+    ],
+    "publishers": [
+        "FromSoftware, Inc.",
+        "Bandai Namco Entertainment"
+    ],
+    "price_overview": {
+        "currency": "RUB",
+        "initial": 239900,
+        "final": 239900,
+        "discount_percent": 0,
+        "initial_formatted": "",
+        "final_formatted": "2399 руб."
+    },
+    "packages": [
+        1010513,
+        1010505,
+        1010506
+    ],
+    "package_groups": [
+        {
+            "name": "default",
+            "title": "Купить ELDEN RING Shadow of the Erdtree",
+            "description": "",
+            "selection_text": "Выберите способ покупки",
+            "save_text": "",
+            "display_type": 0,
+            "is_recurring_subscription": "false",
+            "subs": [
+                {
+                    "packageid": 1010513,
+                    "percent_savings_text": ": ",
+                    "percent_savings": 0,
+                    "option_text": "ELDEN RING Shadow of the Erdtree - 2399 руб.",
+                    "option_description": "",
+                    "can_get_free_license": "0",
+                    "is_free_license": false,
+                    "price_in_cents_with_discount": 239900
+                },
+                {
+                    "packageid": 1010505,
+                    "percent_savings_text": ": ",
+                    "percent_savings": 0,
+                    "option_text": "ELDEN RING Shadow of the Erdtree Edition - 4799 руб.",
+                    "option_description": "",
+                    "can_get_free_license": "0",
+                    "is_free_license": false,
+                    "price_in_cents_with_discount": 479900
+                },
+                {
+                    "packageid": 1010506,
+                    "percent_savings_text": ": ",
+                    "percent_savings": 0,
+                    "option_text": "ELDEN RING Shadow of the Erdtree Deluxe Edition - 5999 руб.",
+                    "option_description": "",
+                    "can_get_free_license": "0",
+                    "is_free_license": false,
+                    "price_in_cents_with_discount": 599900
+                }
+            ]
+        }
+    ],
+    "platforms": {
+        "windows": true,
+        "mac": false,
+        "linux": false
+    },
+    "metacritic": {
+        "score": 92,
+        "url": "https://www.metacritic.com/game/pc/elden-ring-shadow-of-the-erdtree?ftag=MCD-06-10aaa1f"
+    },
+    "categories": [
+        {
+            "id": 2,
+            "description": "Для одного игрока"
+        },
+        {
+            "id": 1,
+            "description": "Для нескольких игроков"
+        },
+        {
+            "id": 49,
+            "description": "Игрок против игрока"
+        },
+        {
+            "id": 36,
+            "description": "Игрок против игрока (по сети)"
+        },
+        {
+            "id": 9,
+            "description": "Кооператив"
+        },
+        {
+            "id": 38,
+            "description": "Кооператив (по сети)"
+        },
+        {
+            "id": 21,
+            "description": "Доп. контент"
+        },
+        {
+            "id": 22,
+            "description": "Достижения Steam"
+        },
+        {
+            "id": 28,
+            "description": "Полная поддержка контроллеров"
+        },
+        {
+            "id": 29,
+            "description": "Коллекционные карточки Steam"
+        },
+        {
+            "id": 23,
+            "description": "Steam Cloud"
+        },
+        {
+            "id": 62,
+            "description": "Семейный доступ"
+        }
+    ],
+    "genres": [
+        {
+            "id": "1",
+            "description": "Экшены"
+        },
+        {
+            "id": "3",
+            "description": "Ролевые игры"
+        }
+    ],
+    "screenshots": [
+        {
+            "id": 0,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2778580/ss_c97bcad291f4f45d4be4594f34bd78921d961099.600x338.jpg?t=1744748042",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2778580/ss_c97bcad291f4f45d4be4594f34bd78921d961099.1920x1080.jpg?t=1744748042"
+        },
+        {
+            "id": 1,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2778580/ss_9769407281276d7fd76d6221fe83c05defb0b998.600x338.jpg?t=1744748042",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2778580/ss_9769407281276d7fd76d6221fe83c05defb0b998.1920x1080.jpg?t=1744748042"
+        },
+        {
+            "id": 2,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2778580/ss_b51d116ccb4b033423d30f0c08c844767b3c013d.600x338.jpg?t=1744748042",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2778580/ss_b51d116ccb4b033423d30f0c08c844767b3c013d.1920x1080.jpg?t=1744748042"
+        },
+        {
+            "id": 3,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2778580/ss_c27ceb209a6d3a215181b98e19dd8ab0632c4de3.600x338.jpg?t=1744748042",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2778580/ss_c27ceb209a6d3a215181b98e19dd8ab0632c4de3.1920x1080.jpg?t=1744748042"
+        },
+        {
+            "id": 4,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2778580/ss_d18059b5260bf730d3942343f9de3027db4b4afe.600x338.jpg?t=1744748042",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2778580/ss_d18059b5260bf730d3942343f9de3027db4b4afe.1920x1080.jpg?t=1744748042"
+        },
+        {
+            "id": 5,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2778580/ss_e2c584ea9ae274be76d0039f8f406d6300973f66.600x338.jpg?t=1744748042",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2778580/ss_e2c584ea9ae274be76d0039f8f406d6300973f66.1920x1080.jpg?t=1744748042"
+        },
+        {
+            "id": 6,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2778580/ss_873d6df5a2019f8b6296f7185ec848b18ada48b8.600x338.jpg?t=1744748042",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2778580/ss_873d6df5a2019f8b6296f7185ec848b18ada48b8.1920x1080.jpg?t=1744748042"
+        },
+        {
+            "id": 7,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2778580/ss_79762a0233d1ce00783796ac3779d8765c17f952.600x338.jpg?t=1744748042",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2778580/ss_79762a0233d1ce00783796ac3779d8765c17f952.1920x1080.jpg?t=1744748042"
+        },
+        {
+            "id": 8,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2778580/ss_001340af27d26e05867e68d7cd61ded672ea0c15.600x338.jpg?t=1744748042",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2778580/ss_001340af27d26e05867e68d7cd61ded672ea0c15.1920x1080.jpg?t=1744748042"
+        },
+        {
+            "id": 9,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2778580/ss_e8f6fb2cc557190ae280fac5dd3cb5cd38ea2980.600x338.jpg?t=1744748042",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2778580/ss_e8f6fb2cc557190ae280fac5dd3cb5cd38ea2980.1920x1080.jpg?t=1744748042"
+        }
+    ],
+    "movies": [
+        {
+            "id": 257036895,
+            "name": "ELDEN RING Shadow of the Erdtree - Launch Trailer",
+            "thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257036895/movie.293x165.jpg?t=1720618417",
+            "webm": {
+                "480": "https://video.akamai.steamstatic.com/store_trailers/257036895/movie480_vp9.webm?t=1720618417",
+                "max": "https://video.akamai.steamstatic.com/store_trailers/257036895/movie_max_vp9.webm?t=1720618417"
+            },
+            "mp4": {
+                "480": "https://video.akamai.steamstatic.com/store_trailers/257036895/movie480.mp4?t=1720618417",
+                "max": "https://video.akamai.steamstatic.com/store_trailers/257036895/movie_max.mp4?t=1720618417"
+            },
+            "dash_av1": "https://video.akamai.steamstatic.com/store_trailers/2778580/724315/443e85ff355524e2d079958df6db55f67ad9be68/1750819880/dash_av1.mpd?t=1720618417",
+            "dash_h264": "https://video.akamai.steamstatic.com/store_trailers/2778580/724315/443e85ff355524e2d079958df6db55f67ad9be68/1750819880/dash_h264.mpd?t=1720618417",
+            "hls_h264": "https://video.akamai.steamstatic.com/store_trailers/2778580/724315/443e85ff355524e2d079958df6db55f67ad9be68/1750819880/hls_264_master.m3u8?t=1720618417",
+            "highlight": true
+        },
+        {
+            "id": 257003018,
+            "name": "ELDEN RING Shadow of the Erdtree - Gameplay Reveal Trailer",
+            "thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257003018/movie.293x165.jpg?t=1708702620",
+            "webm": {
+                "480": "https://video.akamai.steamstatic.com/store_trailers/257003018/movie480_vp9.webm?t=1708702620",
+                "max": "https://video.akamai.steamstatic.com/store_trailers/257003018/movie_max_vp9.webm?t=1708702620"
+            },
+            "mp4": {
+                "480": "https://video.akamai.steamstatic.com/store_trailers/257003018/movie480.mp4?t=1708702620",
+                "max": "https://video.akamai.steamstatic.com/store_trailers/257003018/movie_max.mp4?t=1708702620"
+            },
+            "dash_av1": "https://video.akamai.steamstatic.com/store_trailers/2778580/665961/db54e40012a7d037bf51dfb8a9fed25dab353397/1750819837/dash_av1.mpd?t=1708702620",
+            "dash_h264": "https://video.akamai.steamstatic.com/store_trailers/2778580/665961/db54e40012a7d037bf51dfb8a9fed25dab353397/1750819837/dash_h264.mpd?t=1708702620",
+            "hls_h264": "https://video.akamai.steamstatic.com/store_trailers/2778580/665961/db54e40012a7d037bf51dfb8a9fed25dab353397/1750819837/hls_264_master.m3u8?t=1708702620",
+            "highlight": true
+        }
+    ],
+    "recommendations": {
+        "total": 81302
+    },
+    "release_date": {
+        "coming_soon": false,
+        "date": "20 июн. 2024 г."
+    },
+    "support_info": {
+        "url": "https://www.bandainamcoent.com/support",
+        "email": ""
+    },
+    "background": "https://store.akamai.steamstatic.com/images/storepagebackground/app/2778580?t=1744748042",
+    "background_raw": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2778580/page_bg_raw.jpg?t=1744748042",
+    "content_descriptors": {
+        "ids": [],
+        "notes": null
+    },
+    "ratings": {
+        "esrb": {
+            "rating": "m",
+            "descriptors": "Blood and Gore\r\nLanguage\r\nSuggestive Themes\r\nViolence",
+            "required_age": "16",
+            "use_age_gate": "true"
+        },
+        "dejus": {
+            "rating": "16",
+            "descriptors": "Violência",
+            "use_age_gate": "true",
+            "required_age": "16"
+        },
+        "pegi": {
+            "rating": "16",
+            "descriptors": "Violence",
+            "use_age_gate": "true",
+            "required_age": "16"
+        },
+        "usk": {
+            "rating": "16",
+            "required_age": "16",
+            "use_age_gate": "true"
+        },
+        "nzoflc": {
+            "rating": "r13",
+            "descriptors": "Violence &amp; horror scenes",
+            "required_age": "13",
+            "use_age_gate": "true"
+        },
+        "fpb": {
+            "rating": "16",
+            "required_age": "16",
+            "use_age_gate": "true"
+        },
+        "csrr": {
+            "rating": "R",
+            "use_age_gate": "true",
+            "required_age": "18"
+        },
+        "cero": {
+            "rating": "d",
+            "descriptors": "暴力",
+            "required_age": "17",
+            "use_age_gate": "true"
+        },
+        "crl": {
+            "rating": "16",
+            "use_age_gate": "true",
+            "required_age": "16"
+        },
+        "steam_germany": {
+            "rating_generated": "1",
+            "rating": "0",
+            "required_age": "0",
+            "banned": "0",
+            "use_age_gate": "0",
+            "descriptors": ""
+        }
+    }
+}

@@ -1,0 +1,116 @@
+[
+    {
+        "name": "The Last of Us: Part 1",
+        "header_image": "images/special_offer_1_img.png",
+        "steam_appid": 1888930,
+        "price_overview": {
+            "currency": "USD",
+            "initial": 59.99,
+            "final": 47.99,
+            "discount_percent": 20,
+            "initial_formatted": "",
+            "final_formatted": "47.99"
+        },
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        },
+        "expiration_date": "Until Nov 2"
+    },
+    {
+        "name": "Iratus: Lord of the Dead",
+        "header_image": "images/special_offer_2_img.png",
+        "steam_appid": 807120,
+        "price_overview": {
+            "currency": "USD",
+            "initial": 29.99,
+            "final": 3.89,
+            "discount_percent": 87,
+            "initial_formatted": "",
+            "final_formatted": "3.89"
+        },
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        },
+        "expiration_date": "Until Nov 6"
+    },
+    {
+        "name": "Beyond: Two Souls",
+        "header_image": "images/special_offer_3_img.png",
+        "steam_appid": 960990,
+        "price_overview": {
+            "currency": "USD",
+            "initial": 19.99,
+            "final": 7.99,
+            "discount_percent": 60,
+            "initial_formatted": "",
+            "final_formatted": "47.99"
+        },
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        },
+        "expiration_date": "Only Today!"
+    },
+    {
+        "name": "The Last of Us: Part 1",
+        "header_image": "images/special_offer_1_img.png",
+        "steam_appid": 1888930,
+        "price_overview": {
+            "currency": "USD",
+            "initial": 59.99,
+            "final": 47.99,
+            "discount_percent": 20,
+            "initial_formatted": "",
+            "final_formatted": "47.99"
+        },
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        },
+        "expiration_date": "Until Nov 2"
+    },
+    {
+        "name": "Iratus: Lord of the Dead",
+        "header_image": "images/special_offer_2_img.png",
+        "steam_appid": 807120,
+        "price_overview": {
+            "currency": "USD",
+            "initial": 29.99,
+            "final": 3.89,
+            "discount_percent": 87,
+            "initial_formatted": "",
+            "final_formatted": "3.89"
+        },
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        },
+        "expiration_date": "Until Nov 6"
+    },
+    {
+        "name": "Beyond: Two Souls",
+        "header_image": "images/special_offer_3_img.png",
+        "steam_appid": 960990,
+        "price_overview": {
+            "currency": "USD",
+            "initial": 19.99,
+            "final": 7.99,
+            "discount_percent": 60,
+            "initial_formatted": "",
+            "final_formatted": "47.99"
+        },
+        "platforms": {
+            "windows": true,
+            "mac": false,
+            "linux": false
+        },
+        "expiration_date": "Only Today!"
+    }
+]
