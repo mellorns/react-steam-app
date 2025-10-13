@@ -369,11 +369,11 @@
 /* Main styles */
 
 .game-hero-section {
-    height: 400px;
+    height: 500px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background: url("images/game_img_big_1.png") lightgray center 68% /cover no-repeat;
+    background: lightgray center 68% /cover no-repeat;
     position: relative;
 }
 
@@ -506,7 +506,7 @@
 
     padding: 0 24px;
     display: grid;
-    grid-template-columns: minmax(auto, 800px)  minmax(auto, 430px);
+    grid-template-columns: minmax(auto, 800px) minmax(auto, 430px);
     gap: 27px 21px;
     grid-template-areas:
         'navigation navigation'
@@ -569,6 +569,9 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 7px;
+    }
+    .screenshots-section {
+        position: relative;
     }
 }
 
@@ -755,16 +758,16 @@
 
 }
 
-@media screen and (max-width: 950px) {}
-
 @media screen and (max-width: 800px) {
     .game-hero-content {
         top: 0;
         left: 0;
+        height: 100%;
         width: auto;
         bottom: unset;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        justify-content: space-between;
         padding: 10px;
         gap: 6px;
 

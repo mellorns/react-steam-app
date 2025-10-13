@@ -3,20 +3,21 @@ import { NavLink, useNavigate, useParams } from "react-router";
 import MySlider from "../../components/common/MySlider";
 import '../../assets/styles/store/gameDatailPage.scss'
 import ResponsiveList from "../../components/common/ResponsiveList";
-import { SteamAPI } from "../../hooks/useFetchSteam";
+import { useFetchSteam } from "../../hooks/useFetchSteam";
+import { SteamAPI } from "../../api/steamApi";
+import Loader from "../../components/common/Loader";
 
 export default function GameDetails() {
     const { appid } = useParams();
+    const { data, error } = useFetchSteam(SteamAPI.getGame, appid)
     const [lightBoxImg, setLightBoxImg] = useState(null)
-    const { data, error } = SteamAPI.getGame(appid)
 
     const openLigthBox = (src) => setLightBoxImg(src)
     const closeLigthBox = () => setLightBoxImg(null)
 
 
-    if (!data) return <div>Loading..</div>
+    if (!data) return <Loader/>
     if (error) return <div>{error}</div>
-
 
     const config = {
         slidesToShow: 3,
@@ -77,7 +78,7 @@ export default function GameDetails() {
                 </div>
                 <div className="block general-block">
                     <div className="slider-block">
-                        {data.movies.length && <div className="main-img-container">
+                        {data.movies?.length && <div className="main-img-container">
                             <video
                                 controls
                                 poster={data.movies[0].thumbnail}
@@ -229,17 +230,6 @@ export default function GameDetails() {
                                             Add to Cart
                                         </button>
                                     </div>
-                                    {/* <div className="included-content-block">
-                                        <p>Includes:</p>
-                                        <ul className="included-content-list">
-                                            <li>
-                                                Elden Ring (full game)
-                                            </li>
-                                            <li>
-                                                Digital Artbook & Original Soundtrack
-                                            </li>
-                                        </ul>
-                                    </div> */}
                                 </div>
                             )
                         })}
@@ -345,13 +335,13 @@ export default function GameDetails() {
                             <div className="block-top-row">
                                 <div className="block-title-gray">Achievements</div>
                             </div>
-                            <ResponsiveList achievements={data.achievements} />
+                            {data.achievements && <ResponsiveList achievements={data.achievements} />}
                         </div>
                         <div className="block">
                             <div className="block-top-row">
                                 <div className="block-title-gray">Point Shop Items</div>
                             </div>
-                            <ResponsiveList achievements={data.achievements} />
+                            {data.achievements && <ResponsiveList achievements={data.achievements} />}
                         </div>
                         <div className="block sidebar-navigation">
                             <div className="block-top-row">

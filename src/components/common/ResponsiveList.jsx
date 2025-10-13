@@ -1,9 +1,8 @@
 
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 
 
 export default function ResponsiveList({ achievements }) {
-    console.log(achievements);
     
     const containerRef = useRef(null);
     const [visibleCount, setVisibleCount] = useState(achievements.highlighted.length);
@@ -52,7 +51,7 @@ export default function ResponsiveList({ achievements }) {
             {achievements.highlighted.slice(0, visibleCount).map((item, i) => (
                 <li key={i}>
                     <div className="achievements-img-container">
-                        <img src={item.path} alt={item.name} />
+                        <img src={item.path} alt={item.name} title={item.name}/>
                     </div>
                 </li>
             ))}

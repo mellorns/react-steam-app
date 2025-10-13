@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import NoPageFound from "../common/NoPageFound";
 import MySlider from "../common/MySlider";
 import SellCardSlide from "../slides/SellCardSlide";
+import Loader from "../common/Loader";
 
 
 export default function SpecialOrderSection() {
@@ -45,7 +46,7 @@ export default function SpecialOrderSection() {
     }
 
 
-    if (!data) return <NoPageFound />
+    if (!data) return <Loader />
 
     return (
         <section className='special-offers-section slider-section'>

@@ -1,13 +1,9 @@
+import { NavLink } from "react-router";
 import ProfileRecentActivity from "./ProfileRecentActivity";
 
-export default function ProfileMainContent({ data }) {
-    // if (!data) return
-
-
-
-    // const IMG_URL = `https://media.steampowered.com/steamcommunity/public/images/apps/${data[0].appid}/${data[0].img_icon_url}.jpg`
-
-
+export default function ProfileMainContent({ games, recentlyPlayed }) {
+ 
+       
 
     return (
         <div className="profile-main-content">
@@ -20,11 +16,11 @@ export default function ProfileMainContent({ data }) {
 
                         <ul className="profile-games-info-list">
                             <li>
-                                <div className="games-info-list-counter">350</div>
+                                <div className="games-info-list-counter">{games.length}</div>
                                 <div className="games-info-list-text">Games owned</div>
                             </li>
                             <li>
-                                <div className="games-info-list-counter">600</div>
+                                <div className="games-info-list-counter">{games.length}</div>
                                 <div className="games-info-list-text">DLCs owned</div>
                             </li>
                             <li>
@@ -40,71 +36,22 @@ export default function ProfileMainContent({ data }) {
                     </div>
                     <div className="profile-games-items">
                         <ul className="profile-games-items-list">
-                            <li>
-                                <a href="#" className="game-link">
-                                    <img src="images/game_1.png" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="game-link">
-                                    <img src="images/game_1.png" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="game-link">
-                                    <img src="images/game_1.png" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="game-link">
-                                    <img src="images/game_1.png" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="game-link">
-                                    <img src="images/game_1.png" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="game-link">
-                                    <img src="images/game_1.png" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="game-link">
-                                    <img src="images/game_1.png" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="game-link">
-                                    <img src="images/game_1.png" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="game-link">
-                                    <img src="images/game_1.png" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="game-link">
-                                    <img src="images/game_1.png" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="game-link">
-                                    <img src="images/game_1.png" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="game-link">
-                                    <img src="images/game_1.png" alt="" />
-                                </a>
-                            </li>
+                            {games.map(item => {
+                                return <li key={item.appid}>
+                                    <NavLink to={`/library/${item.appid}`} className="game-link">
+                                        <img src={`https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${item.appid}/capsule_231x87.jpg?t=1750959031`}
+                                            onError={({ currentTarget }) => {
+                                                currentTarget.onerror = null;
+                                                currentTarget.src = "images/game_1.png";
+                                            }} alt="" />
+                                    </NavLink>
+                                </li>
+                            })}
                         </ul>
                     </div>
                 </div>
             </section>
-            <ProfileRecentActivity />
+            <ProfileRecentActivity recentlyPlayed={recentlyPlayed} />
             <section className="profile-comment-section">
                 <div className="items-container">
                     <div className="container-header">

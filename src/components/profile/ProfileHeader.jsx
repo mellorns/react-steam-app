@@ -1,10 +1,6 @@
 export default function ProfileHeader({ data = {}}) {
 
 
-
-    // if(!data) return
-
-
     return (
         <div className="profile-header">
             <div className="profile-header-content">

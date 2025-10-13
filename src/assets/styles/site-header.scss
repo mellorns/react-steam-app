@@ -147,6 +147,11 @@ header {
     padding: 4px 3px;
     gap: 8px;
 
+    .img-container {
+        width: 31px;
+        height: 31px;
+    }
+
     .svg-container {
         padding: 7px 5px;
     }
@@ -251,7 +256,7 @@ header {
     background-color: $background-highlight-color;
     transform: translateX(-100%);
     transition: all .4s ease-in-out;
-    z-index: 50;
+    z-index: 100;
 }
 
 

@@ -1,4 +1,7 @@
-export default function ProfileSideBar() {
+import { NavLink } from "react-router"
+
+export default function ProfileSideBar({ friends, games }) {
+    
     return (
         <div className="profile-sidebar">
             <div className="prifile-sidebar-navigation-section">
@@ -47,7 +50,7 @@ export default function ProfileSideBar() {
                     <li className="sidebar-navigation-item">
                         <a href='#'>
                             <span className="sidebar-navigation-item-title">Games</span>
-                            <span className="sidebar-navigation-item-count">350</span>
+                            <span className="sidebar-navigation-item-count">{games.length}</span>
                         </a>
                     </li>
                     <li className="sidebar-navigation-item">
@@ -89,7 +92,7 @@ export default function ProfileSideBar() {
             </div>
             <div className="prifile-sidebar-friends-section">
                 <div className="friends-section-header">
-                    <h2>Friends (4)</h2>
+                    <h2>Friends ({friends.length})</h2>
                     <button>
                         <div className='svg-container'>
                             <svg className='arrow-down'>
@@ -99,26 +102,28 @@ export default function ProfileSideBar() {
                     </button>
                 </div>
                 <ul className="friends-list">
-                    <li>
-                        <a href="#" className="friend-list-link">
-                            <div className="friend-content">
-                                <div className="friend-profile-avatar avatar-outline">
-                                    <img src="images/mini-profile.png" alt="" />
-                                </div>
-                                <div className="friend-description">
-                                    <div className="friend-name">
-                                        Friend 1
+                    {friends.map(item => {
+                        return <li key={item.steamid}>
+                            <NavLink to={`/profile/${item.steamid}`} className={`friend-list-link status-${item.status}`}>
+                              
+                                    <div className={`friend-profile-avatar avatar-outline`}>
+                                        <img src={item.avatar} alt={item.name} />
                                     </div>
-                                    <div className="friend-status">
-                                        Counter-Strike 2
+                                    <div className="friend-description">
+                                        <div className="friend-name">
+                                          {item.name}
+                                        </div>
+                                        <div className="friend-status">
+                                            Counter-Strike 2
+                                        </div>
                                     </div>
+                                <div className="profile-header-lvl-progress">
+                                    <span>72</span>
                                 </div>
-                            </div>
-                            <div className="profile-header-lvl-progress">
-                                <span>72</span>
-                            </div>
-                        </a>
-                    </li>
+                            </NavLink>
+                        </li>
+                    })}
+
                     <li>
                         <a href="#" className="friend-list-link">
                             <div className="friend-content">

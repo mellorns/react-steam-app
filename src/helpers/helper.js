@@ -10,6 +10,9 @@ function roundAfterPoint(num, decimal) {
 
 
 
-export function createSlug(str) {
-    return str ? str.replaceAll(' ', '_') : ''
+export function createSlug(name) {
+    return name
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "_") // замінює все зайве на "_"
+        .replace(/^_|_$/g, ""); // видаляє підкреслення на краях
 }

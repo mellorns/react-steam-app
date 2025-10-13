@@ -1,9 +1,15 @@
-export default function LibraryHeroSection() {
+export default function LibraryHeroSection({ name, backgroundUrl, playtime_forever }) {
+
+
+
+
     return (
-        <div className="game-hero-section">
+        <div className="game-hero-section" style={{
+            backgroundImage: `url(${backgroundUrl})`,
+        }} >
             <div className="game-hero-overlay"></div>
             <div className="game-hero-content">
-                <h2 className="game-title">Bioshock Remastered</h2>
+                <h2 className="game-title">{name}</h2>
                 <button className="play-btn">
                     <div className='svg-container'>
                         <svg >
@@ -39,7 +45,7 @@ export default function LibraryHeroSection() {
                                 PLAY TIME
                             </div>
                             <div className="game-info-descr">
-                                92 hours
+                                {(playtime_forever/60).toFixed(0)} hours
                             </div>
                         </div>
                     </li>

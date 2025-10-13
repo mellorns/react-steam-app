@@ -3,9 +3,10 @@ import { NavLink } from "react-router";
 export default function NoPageFound() {
     return (
         <div className="not-found">
-            <h1>404</h1>
-            <p>Сторінку не знайдено</p>
-            <NavLink to="/" className="back-link">Повернутися на головну</NavLink>
+            <h1>Sorry</h1>
+            <p>An error was ancountered while proseccing your reqaust</p>
+
+        <div>Here`s a link to the Steam Community<NavLink to="/" className="back-link"> Store</NavLink></div>    
         </div>
     )
 }

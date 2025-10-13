@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import MySlider from "../common/MySlider";
 import FreeToPlaySlide from "../slides/FreeToPlaySlide";
 import NoPageFound from "../common/NoPageFound";
+import Loader from "../common/Loader";
 
 export default function FreeToPlaySection() {
 
@@ -43,7 +44,7 @@ export default function FreeToPlaySection() {
         ]
     }
 
-    if (!data) return <NoPageFound />
+    if (!data) return <Loader />
 
 
     return (

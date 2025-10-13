@@ -2,6 +2,7 @@ import MySlider from "../common/MySlider";
 import StreamingSlide from "../slides/StreamingSlide";
 import { useEffect, useState } from "react";
 import NoPageFound from "../common/NoPageFound";
+import Loader from "../common/Loader";
 
 export default function StreamingSection() {
 
@@ -41,7 +42,7 @@ export default function StreamingSection() {
             },
         ]
     }
-    if (!data) return <NoPageFound />
+    if (!data) return <Loader />
 
     return (
         <section className='streaming-section slider-section'>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import MySlider from "../common/MySlider";
 import SellCardSlide from "../slides/SellCardSlide";
 import NoPageFound from "../common/NoPageFound";
+import Loader from "../common/Loader";
 
 export default function NewTrendingSection() {
 
@@ -43,7 +44,7 @@ export default function NewTrendingSection() {
         ]
     }
 
-    if (!data) return <NoPageFound />
+    if (!data) return <Loader />
 
     return (
         <section className='new-trading-section slider-section'>

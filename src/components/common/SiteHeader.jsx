@@ -1,13 +1,16 @@
-import { NavLink } from 'react-router'
+import { NavLink, useNavigate } from 'react-router'
 import '../../assets/styles/site-header.scss'
 import ResponsiveSiteHeader from './ResponsiveSiteHeader'
+import { useProfileStore } from '../../store/useProfileStore';
+import NoPageFound from './NoPageFound';
 
 
 
 export default function SiteHeader() {
+    const { profile } = useProfileStore();
+    const navigate = useNavigate();
 
-
-
+    if (!profile) return <NoPageFound/>
     return (
         <header>
             <ResponsiveSiteHeader />
@@ -52,7 +55,7 @@ export default function SiteHeader() {
                             <NavLink to="/community">Community</NavLink>
                         </li>
                         <li>
-                            <NavLink to='/profile/76561198297315433'>Profile</NavLink>
+                            <NavLink to={`/profile/${profile.steamid}`}>{profile.personaname}</NavLink>
                         </li>
                         <li>
                             <NavLink to='/library'>Library</NavLink>
@@ -86,12 +89,12 @@ export default function SiteHeader() {
                     <div className='profile-info'>
                         <div className="img-container">
                             <NavLink to={`profile`}>
-                                <img src="images/mini-profile.png" alt="profile image" />
+                                <img src={profile.avatarmedium} alt="profile image" />
                             </NavLink>
                         </div>
                         <div className='profile-name'>
-                            <button>
-                                Juxtopposed
+                            <button onClick={() => navigate(`/profile/${profile.steamid}`)}>
+                                {profile.personaname}
                             </button>
                         </div>
                         <div className='profile-money'>

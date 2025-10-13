@@ -1,38 +1,45 @@
-// hooks/useFetchSteam.js
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 
-export function useFetchSteam(path) {
+export function useFetchSteam(fetchFn, id) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    async function fetchData() {
+
+    let isMounted = true
+
+    async function load() {
+
       try {
-        const res = await fetch(`http://localhost:3000/api/steam/${path}`);
-        if (!res.ok) {
-          if (res.status === 404) {
-            navigate("/404");
-            return;
-          }
-          throw new Error("Request failed");
-        }
-        const json = await res.json();
-        setData(json);
+        const result = await fetchFn(id)
+        if (isMounted) setData(result)
       } catch (err) {
-        setError(err.message);
+
+        if (err.message.includes('404')) navigate('/404')
+        if (isMounted) setError(err.message)
       }
     }
+    if (id) load()
 
-    fetchData();
-  }, [path]);
+
+
+    return () => (isMounted = false)
+
+
+  }, [fetchFn, id]);
 
   return { data, error };
 }
+
+
 
 export const SteamAPI = {
   getProfile: (id) => useFetchSteam(`profile/${id}`),
   getUserGames: (id) => useFetchSteam(`games/${id}`),
   getGame: (appid) => useFetchSteam(`game/${appid}`),
+  getFriends: (appid) => useFetchSteam(`friends/${appid}`),
+  getRecentGames: (appid) => useFetchSteam(`recent/${appid}`),
 }
+

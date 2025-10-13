@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import MySlider from "../common/MySlider";
 import FeaturedSlide from "../slides/FeaturedSlide";
 import NoPageFound from "../common/NoPageFound";
+import Loader from "../common/Loader";
 
 export default function FeaturedSection() {
     const [data, setData] = useState(null)
@@ -21,7 +22,7 @@ export default function FeaturedSection() {
         loadData()
     }, [])
 
-    if(!data) return <NoPageFound />
+    if(!data) return <Loader />
 
     return (
         <section className='featured-section'>

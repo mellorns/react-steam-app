@@ -190,7 +190,7 @@ $background-hover: #313843;
 
 .profile-games-items-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(146px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 13px;
     overflow-y: auto;
     max-height: 160px;
@@ -225,6 +225,7 @@ $background-hover: #313843;
 
 .game-link {
     display: block;
+    height: 70px;
 }
 
 
@@ -307,6 +308,7 @@ progress::-webkit-progress-value {
     margin-bottom: 20px;
 }
 
+
 .profile-sidebar-navigation {
     display: flex;
     flex-direction: column;
@@ -387,10 +389,24 @@ progress::-webkit-progress-value {
     display: flex;
     gap: 6px;
     flex-direction: column;
+    max-height: 350px;
+    overflow: auto;
+
+
+    .friend-name,
+    .friend-description {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+
+    }
 }
 
 .friend-list-link {
-    display: flex;
+    display: grid;
+    grid-template-columns:1fr 130px 1fr;
+    gap: 5px;
+
     justify-content: space-between;
     align-items: center;
     text-decoration: none;
@@ -399,6 +415,41 @@ progress::-webkit-progress-value {
     background-color: $background-main-color;
     color: $color-primary;
 
+
+    &.status-0 {
+        color: $text-dim;;
+        .avatar-outline {
+            outline: 2px solid $text-dim;
+            border-radius: 3px;
+        }
+          .friend-status {
+      display: none;  
+    } 
+    }
+
+    &.status-1 {
+        color: $color-primary;;
+        .avatar-outline {
+            outline: 2px solid $color-primary;
+            border-radius: 3px;
+        }
+    }
+
+    &.status-2 {
+        color: #cbdf19;;
+        .avatar-outline {
+            outline: 2px solid #cbdf19;
+            border-radius: 3px;
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        grid-template-columns: 1fr 70px 1fr;
+        &>div {
+            justify-self: center;
+        }
+    }
+  
 }
 
 .friend-profile-avatar {
@@ -411,10 +462,12 @@ progress::-webkit-progress-value {
     border-radius: 3px;
 }
 
+
 .friend-content {
     display: flex;
     align-items: center;
     gap: 9px;
+
 }
 
 .friend-name {
@@ -653,6 +706,7 @@ progress::-webkit-progress-value {
         justify-content: space-around;
         gap: 8px;
     }
+
     .recent-activity-section {
         margin-bottom: 100px;
     }

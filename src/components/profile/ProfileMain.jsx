@@ -1,13 +1,12 @@
-import { NavLink } from "react-router";
 import ProfileMainContent from "./ProfileMainContent";
 import ProfileSideBar from "./ProfileSideBar";
 
-export default function ProfileMain({data}) {
+export default function ProfileMain({friends, games,recentlyPlayed}) {
     return (
         <div className="profile-main" role="main">
             <div className="profile-main-container">
-                <ProfileMainContent data={data}/>
-                <ProfileSideBar />
+                <ProfileMainContent games={games} recentlyPlayed={recentlyPlayed}/>
+                <ProfileSideBar friends={friends}  games={games}/>
             </div>
         </div>
     )

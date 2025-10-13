@@ -140,12 +140,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 
 
   img {
     max-width: 50%;
     max-height: 50%;
     border-radius: 8px;
+    object-fit: contain;
   }
 
 }
@@ -156,4 +158,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+
+  .back-link {
+    color: common.$primary-color;
+  }
 }

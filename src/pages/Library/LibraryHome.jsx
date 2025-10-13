@@ -1,59 +1,41 @@
-import { NavLink } from "react-router";
+import { NavLink, useParams } from "react-router";
 import LibraryHeroSection from "../../components/library/LibraryHeroSection";
 import ResponsiveList from "../../components/common/ResponsiveList";
-
-
-const achievmentsGainerList = {
-    highlighted: [
-        {
-            path: "images/achievements_img_1.png"
-        },
-        {
-            path: "images/achievements_img_1.png"
-        },
-        {
-            path: "images/achievements_img_1.png"
-        },
-        {
-            path: "images/achievements_img_1.png"
-        },
-        {
-            path: "images/achievements_img_1.png"
-        },
-        {
-            path: "images/achievements_img_1.png"
-        },
-        {
-            path: "images/achievements_img_1.png"
-        },
-        {
-            path: "images/achievements_img_1.png"
-        },
-        {
-            path: "images/achievements_img_1.png"
-        },
-        {
-            path: "images/achievements_img_1.png"
-        },
-    ],
-    length: 12
-}
-
-
-
-
-
+import { useFetchSteam } from "../../hooks/useFetchSteam";
+import { createSlug } from "../../helpers/helper";
+import { useState } from "react";
+import { SteamAPI } from "../../api/steamApi";
+import { useGamesStore } from "../../store/useGamesStore";
+import Loader from "../../components/common/Loader";
 
 
 export default function LibraryHome() {
 
+    const [lightBoxImg, setLightBoxImg] = useState(null)
+
+    const openLigthBox = (src) => setLightBoxImg(src)
+    const closeLigthBox = () => setLightBoxImg(null)
+
+    const { appid } = useParams();
+    const { data, error } = useFetchSteam(SteamAPI.getGame, appid)
+    const { games } = useGamesStore();
+
+
+    if (!data) return  <Loader />
+    if (error) return <div>{error}</div>
+
+
+    const currentGame = games.filter(item => item.appid === data.steam_appid)
+
+
+
     return (
         <div className="library-main">
-            <LibraryHeroSection />
+            <LibraryHeroSection name={data.name} backgroundUrl={data.header_image} playtime_forever={currentGame[0].playtime_forever} />
             <div className="game-content-section">
                 <ul className="game-content-navigation-list">
                     <li>
-                        <NavLink to={'/'}>Store Page</NavLink>
+                        <NavLink to={`/game/${data.steam_appid}/${createSlug(data.name)}`}>Store Page</NavLink>
                     </li>
                     <li>
                         <NavLink to={'/'}>DLCs</NavLink>
@@ -104,49 +86,31 @@ export default function LibraryHome() {
                     <section className="achievements-section">
                         <div>
                             <h3 className="section-header">Achievements</h3>
-                            <ResponsiveList achievements={achievmentsGainerList} />
+                            {data.achievements && <ResponsiveList achievements={data.achievements} />}
                         </div>
                         <div>
                             <h3 className="achievements-list-header">Locked Achievements</h3>
-                            <ResponsiveList achievements={achievmentsGainerList} />
-
+                            {data.achievements && <ResponsiveList achievements={data.achievements} />}
                         </div>
                     </section>
-                    <section>
+                    <section className="screenshots-section">
                         <h3 className="section-header">Screenshots</h3>
                         <ul className="screenshots-list">
-                            <li>
-                                <div className="img-container">
-                                    <img src="images/srceenshot_img_1.png" alt="" />
-                                </div>
-                            </li>
-                            <li>
-                                <div className="">
-                                    <img src="images/srceenshot_img_1.png" alt="" />
-                                </div>
-                            </li>
-                            <li>
-                                <div className="">
-                                    <img src="images/srceenshot_img_1.png" alt="" />
-                                </div>
-                            </li>
-                            <li>
-                                <div className="">
-                                    <img src="images/srceenshot_img_1.png" alt="" />
-                                </div>
-                            </li>
-                            <li>
-                                <div className="">
-                                    <img src="images/srceenshot_img_1.png" alt="" />
-                                </div>
-                            </li>
-                            <li>
-                                <div className="">
-                                    <img src="images/srceenshot_img_1.png" alt="" />
-                                </div>
-                            </li>
+                            {data.screenshots.map(item => {
+                                return <li key={item.id}>
+                                    <div className="img-container">
+                                        <img src={item.path_thumbnail} alt="" onClick={() => openLigthBox(item.path_full)} />
+                                    </div>
+                                </li>
+                            })}
                         </ul>
+                        {lightBoxImg &&
+                            <div className='ligthBox' onClick={closeLigthBox}>
+                                <img src={lightBoxImg} alt="" />
+                            </div>
+                        }
                     </section>
+
                 </div>
                 <section className="activity-section">
                     <h3 className="activity-section-header">Activity</h3>

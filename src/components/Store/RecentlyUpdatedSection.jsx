@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import MySlider from "../common/MySlider";
 import RecentlyUpdatedSectionSlide from "../slides/RecentlyUpdatedSectionSlide";
 import NoPageFound from "../common/NoPageFound";
+import Loader from "../common/Loader";
 
 export default function RecentlyUpdatedSection() {
 
@@ -48,7 +49,7 @@ export default function RecentlyUpdatedSection() {
         ]
     }
 
-    if (!data) return <NoPageFound />
+    if (!data) return <Loader />
 
     return (
         <section className='recently-updated-section'>

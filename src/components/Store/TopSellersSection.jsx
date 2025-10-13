@@ -2,6 +2,7 @@ import MySlider from "../common/MySlider";
 import SellCardSlide from "../slides/SellCardSlide";
 import { useEffect, useState } from "react";
 import NoPageFound from "../common/NoPageFound";
+import Loader from "../common/Loader";
 
 export default function TopSellersSection() {
 
@@ -45,7 +46,7 @@ export default function TopSellersSection() {
         ]
     }
 
-    if (!data) return <NoPageFound />
+    if (!data) return <Loader />
     return (
         <section className='top-sellers-section slider-section'>
             <div className="container">
