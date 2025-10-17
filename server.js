@@ -2,12 +2,15 @@ import express from "express";
 import fetch from "node-fetch";
 import cors from "cors";
 
+import dotenv from "dotenv";
+dotenv.config();
+
 const app = express();
 const PORT = 3000;
 
 app.use(cors());
 
-  const STEAM_API_KEY = import.meta.env.VITE_MY_STEAM_KEY;
+const STEAM_API_KEY = process.env.VITE_MY_STEAM_KEY;
 
 
 // Профіль користувача
@@ -81,7 +84,7 @@ app.get("/api/steam/friends/:steamId", async (req, res) => {
     const friendsList = friendsData.friendslist?.friends || [];
 
     if (!friendsList.length) {
-      return res.json([]); 
+      return res.json([]);
     }
     const ids = friendsList.map(f => f.steamid).join(",");
     const detailsResponse = await fetch(

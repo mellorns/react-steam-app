@@ -12,7 +12,6 @@ export default function ResponsiveList({ achievements }) {
         if (!container) return;
         const updateVisible = () => {
 
-
             const children = Array.from(container.children);
             let totalWidth = container.clientWidth;
             let usedWidth = 0;
